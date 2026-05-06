@@ -276,6 +276,7 @@ ul {
   overflow: visible;
   display: flex;
   flex-direction: column;
+   overflow-x: hidden;
 }
 
 .hero__bg {
