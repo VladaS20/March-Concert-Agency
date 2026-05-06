@@ -78,7 +78,7 @@
 
   /* Hero */
   .hero {
-    min-height: 100svh;
+    min-height: 70vh;
   }
   .hero__content {
     padding-top: 64px;
@@ -337,9 +337,19 @@
     padding: 4px 4px 4px 12px;
     border-radius: 12px;
   }
-  .page-nav__btn-icon {
-    font-size: 16px;
-    margin-right: 6px;
+     .page-nav__btn-icon {
+    display: none;
+  }
+  .page-nav__dropdown {
+    display: none;
+  }
+
+  .page-nav__btn-wrapper:hover .page-nav__dropdown {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .page-nav__btn-wrapper:hover .page-nav__btn-bg {
+    border-radius: 15px;
   }
 
   /* Hero */
@@ -491,20 +501,7 @@
     height: 30px;
     padding: 0 10px;
   }
-  .page-nav__btn-icon {
-    display: none;
-  }
-  .page-nav__dropdown {
-    display: none;
-  }
 
-  .page-nav__btn-wrapper:hover .page-nav__dropdown {
-    opacity: 0;
-    visibility: hidden;
-  }
-  .page-nav__btn-wrapper:hover .page-nav__btn-bg {
-    border-radius: 15px;
-  }
   .page-nav__btn-bg {
     padding: 4px;
   }
