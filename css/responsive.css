@@ -332,10 +332,6 @@
   .page-nav {
     padding: 0 16px;
   }
-  .page-nav__btn-wrapper {
-    margin-top: 0px;
-    transform: scale(1);
-  }
   .page-nav__buy-btn {
     font-size: 11px;
     height: 32px;
@@ -364,8 +360,9 @@
     padding: 8px 0;
   }
   .burger {
-    transform: scale(0.85);
-  }
+   transform: scale(1.2);
+   margin-top: 20px;
+    }
   .mobile-menu {
     width: 100%;
     padding: 80px 24px 40px;
