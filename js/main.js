@@ -157,6 +157,7 @@
           dot.className =
             "carousel__dot" + (index === 0 ? " carousel__dot--active" : "");
           dot.addEventListener("click", function () {
+            if (!cards[index]) return; // <- вот эта строка добавляется
             track.scrollTo({
               left: cards[index].offsetLeft - track.offsetLeft,
               behavior: "smooth",
@@ -172,7 +173,9 @@
       var steps = getStepsCount();
       var activeIndex = 0;
       var minDist = Infinity;
+
       for (var i = 0; i < steps; i++) {
+        if (!cards[i]) continue; // защита от undefined
         var cardLeft = cards[i].offsetLeft - track.offsetLeft;
         var dist = Math.abs(scrollLeft - cardLeft);
         if (dist < minDist) {
@@ -180,6 +183,7 @@
           activeIndex = i;
         }
       }
+
       dotsContainer
         .querySelectorAll(".carousel__dot")
         .forEach(function (dot, i) {

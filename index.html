@@ -29,16 +29,12 @@
        Блок: page-header
   ═══════════════════════════════════════════════════ -->
 
-    <header class="page-header" id="page-header">
+    <!-- <header class="page-header" id="page-header">
       <nav class="page-nav">
         <div class="page-nav__btn-wrapper">
           <div class="page-nav__btn-bg">
             <span class="page-nav__btn-icon">+</span>
-            <a
-              class="page-nav__buy-btn"
-              href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
-              >КУПИТЬ БИЛЕТ</a
-            >
+            <button class="page-nav__buy-btn">КУПИТЬ БИЛЕТ</button>
           </div>
           <div class="page-nav__dropdown">
             <a
@@ -51,15 +47,60 @@
               href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
               >17 МАЯ 2026</a
             >
-            <p class="page-nav__dropdown-note">
-              Купите билеты сразу<br />на 2 дня с выгодой
-            </p>
-            <p class="page-nav__dropdown-sub">
-              Доступно для лаунж зон,<br />танц партера и фан зон
-            </p>
+            <p class="page-nav__dropdown-note">Успей купить билеты заранее.</p>
+            <p class="page-nav__dropdown-sub">БРОНИРУЙ лучшие места!</p>
           </div>
         </div>
       </nav>
+    </header> -->
+
+    <header class="page-header" id="page-header">
+      <nav class="page-nav">
+        <div class="page-nav__btn-wrapper">
+          <div class="page-nav__btn-bg" id="nav-btn">
+            <span class="page-nav__btn-icon">+</span>
+            <button class="page-nav__buy-btn">КУПИТЬ БИЛЕТ</button>
+          </div>
+          <div class="page-nav__dropdown">
+            <a
+              class="page-nav__dropdown-item"
+              href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
+              >16 МАЯ 2026</a
+            >
+            <a
+              class="page-nav__dropdown-item"
+              href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
+              >17 МАЯ 2026</a
+            >
+            <p class="page-nav__dropdown-note">Успей купить билеты заранее.</p>
+            <p class="page-nav__dropdown-sub">БРОНИРУЙ лучшие места!</p>
+          </div>
+        </div>
+
+        <!-- Бургер -->
+        <button class="burger" id="burger" aria-label="Меню">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+        <div class="mobile-menu" id="mobile-menu">
+          <button
+            class="mobile-menu__close"
+            id="mobile-menu-close"
+            aria-label="Закрыть"
+          >
+            ×
+          </button>
+          <nav class="mobile-menu__nav">
+            <a class="mobile-menu__link" href="#about">О мероприятии</a>
+            <a class="mobile-menu__link" href="#program">Афиша</a>
+            <a class="mobile-menu__link" href="#faq">FAQ</a>
+          </nav>
+        </div>
+      </nav>
+
+      <!-- Мобильное меню -->
+      <div class="mobile-menu__overlay" id="mobile-menu-overlay"></div>
     </header>
 
     <!-- ═══════════════════════════════════════════════════
@@ -75,28 +116,23 @@
         <div class="hero__bg-overlay"></div>
       </div>
       <div class="hero__content">
-        <div
-          class="hero__logo t-bgimg"
-          data-original="./img/alpha_logo.png"
-          aria-label="Логотип Концертное агентство «Март»"
-          role="img"
-        ></div>
-        <p class="hero__tagline">Оркестр «Новое время» возвращается</p>
+        <p class="hero__tagline">Оркестр «Новое время»</p>
         <div class="hero__meta">
-          <span class="hero__date">май - октябрь 2026</span>
-          <span class="hero__venue">В ТВОЕМ ГОРОДЕ</span>
+          <span class="hero__venue"
+            >Стань частью одного большого музыкального сердца</span
+          >
         </div>
         <div class="hero__socials">
           <a class="hero__social-btn" href="#" aria-label="YouTube">
             <span
               class="hero__social-icon"
-              style="--icon: url(&quot;../img/yt.svg&quot;)"
+              style="--icon: url(&quot;../img/Max.svg&quot;)"
             ></span>
           </a>
           <a class="hero__social-btn" href="#" aria-label="TikTok">
             <span
               class="hero__social-icon"
-              style="--icon: url(&quot;../img/tt.svg&quot;)"
+              style="--icon: url(&quot;../img/vk.svg&quot;)"
             ></span>
           </a>
           <a
@@ -106,13 +142,7 @@
           >
             <span
               class="hero__social-icon"
-              style="--icon: url(&quot;../img/like.svg&quot;)"
-            ></span>
-          </a>
-          <a class="hero__social-btn" href="#" aria-label="Telegram">
-            <span
-              class="hero__social-icon"
-              style="--icon: url(&quot;../img/tg.svg&quot;)"
+              style="--icon: url(&quot;../img/inst.svg&quot;)"
             ></span>
           </a>
         </div>
@@ -120,12 +150,10 @@
       <div class="hero__ticker-wrapper">
         <div class="hero__ticker-track hero__ticker-track--white">
           <div class="hero__ticker-text" id="ticker1">
-            2 дня ✦ каждый день новые выступления ✦ 4 формата развлечений ✦
-            фан-зона в центре сцены ✦ мастер-классы от ведущих брендов ✦ зона
-            аттракционов ✦ иммерсивное шоу 306 ✦ сцена-трансформер ✦ 2 дня ✦
-            каждый день новые выступления ✦ 4 формата развлечений ✦ фан-зона в
-            центре сцены ✦ мастер-классы от ведущих брендов ✦ зона аттракционов
-            ✦ иммерсивное шоу 306 ✦ сцена-трансформер ✦
+            Прозвучат композиции: «Батарейка», «Кукла колдуна», «Крошка моя»,
+            «Районы, кварталы…», «Трава у дома» и многие другие ❤️ Прозвучат
+            композиции: «Батарейка», «Кукла колдуна», «Крошка моя», «Районы,
+            кварталы…», «Трава у дома» и многие другие ❤️
           </div>
         </div>
         <div class="hero__ticker-track hero__ticker-track--green">
@@ -133,12 +161,10 @@
             class="hero__ticker-text hero__ticker-text--reverse"
             id="ticker2"
           >
-            2 дня ✦ каждый день новые выступления ✦ 4 формата развлечений ✦
-            фан-зона в центре сцены ✦ мастер-классы от ведущих брендов ✦ зона
-            аттракционов ✦ иммерсивное шоу 306 ✦ сцена-трансформер ✦ 2 дня ✦
-            каждый день новые выступления ✦ 4 формата развлечений ✦ фан-зона в
-            центре сцены ✦ мастер-классы от ведущих брендов ✦ зона аттракционов
-            ✦ иммерсивное шоу 306 ✦ сцена-трансформер ✦
+            Прозвучат композиции: «Батарейка», «Кукла колдуна», «Крошка моя»,
+            «Районы, кварталы…», «Трава у дома» и многие другие ❤️ Прозвучат
+            композиции: «Батарейка», «Кукла колдуна», «Крошка моя», «Районы,
+            кварталы…», «Трава у дома» и многие другие ❤️
           </div>
         </div>
       </div>
@@ -154,11 +180,20 @@
         <h2 class="about__title">О МЕРОПРИЯТИИ</h2>
 
         <p class="about__description">
-          По многочисленным просьбам жителей и гостей Луганска оркестр «Новое
-          время» возвращается с гастролями — с новой программой
-          <strong>«КАРАОКЕ»</strong>. Мы споём это вместе, потому что такие
-          песни невозможно слушать молча.
+          Волшебные концерт Симфонического оркестра «Новое время». Мировая
+          классика, саундтреки и хиты всех времен. 2000 свечей создадут
+          атмосферу, которую невозможно передать словами. Ощутите незабываемые
+          эмоции.
         </p>
+
+        <blockquote class="about__quote">
+          <p class="about__quote-text">
+            Путешествуй сквозь время в ритме <em>души</em>
+          </p>
+          <cite class="about__quote-author"
+            >Оркестр Нового Времени / Orchestra of New Time</cite
+          >
+        </blockquote>
 
         <div class="about__gallery">
           <div
@@ -179,19 +214,20 @@
           <h3 class="about__utp-title">Почему стоит прийти</h3>
           <ul class="about__utp-list">
             <li class="about__utp-item">
-              🎤 Пойте вместе с оркестром — здесь разрешено всё: петь, хлопать,
-              плакать от ностальгии
+              На сцене — Оркестр «Новое время» с программой «Караоке».
+              <strong>В зале — твой голос,</strong> твоё настроение, твоя
+              история. Приходи петь, чувствовать и быть частью одного большого
+              музыкального сердца.
             </li>
             <li class="about__utp-item">
-              🕯️ Более 2 000 свечей создадут невероятную атмосферу
+              Будут звучать <strong>лучшие композиции</strong>: «Батарейка»,
+              «Кукла колдуна», «Матушка-Земля», «Районы, кварталы», «Крошка
+              моя», «Трава у дома» и многие другие.
             </li>
             <li class="about__utp-item">
-              🎵 Любимые хиты: «Батарейка», «Кукла колдуна», «Матушка-Земля»,
-              «Районы, кварталы», «Крошка моя», «Трава у дома» и многие другие
-            </li>
-            <li class="about__utp-item">
-              ❤️ Это не просто концерт — это встреча с собой, с музыкой, с
-              настоящими эмоциями
+              Здесь разрешено всё: петь, хлопать и плакать от ностальгии.
+              <strong>Более 2 000 свечей</strong> создадут невероятную
+              атмосферу.
             </li>
           </ul>
         </div>
@@ -199,20 +235,14 @@
         <div class="about__facts">
           <div class="about__fact">
             <p class="about__fact-text">
-              <strong>Формат:</strong> живой оркестр, интерактивное пение всем
-              залом, свечная атмосфера, спецэффекты
+              Формат: живой оркестр, интерактивное пение всем залом, свечная
+              атмосфера, спецэффекты.
             </p>
           </div>
           <div class="about__fact">
             <p class="about__fact-text">
-              На сцене — Оркестр «Новое время».<br />
-              В зале — твой голос, твоё настроение, твоя история.
-            </p>
-          </div>
-          <div class="about__fact">
-            <p class="about__fact-text">
-              Приходи петь, чувствовать и быть частью одного большого
-              музыкального сердца.
+              Это не просто концерт — <strong>это встреча</strong> с собой, с
+              музыкой, с настоящими эмоциями ❤️
             </p>
           </div>
         </div>
@@ -226,7 +256,7 @@
 
     <section class="program" id="program">
       <div class="program__inner">
-        <h2 class="program__title">Афиша</h2>
+        <h2 class="program__title">Афиша будущих мероприятий</h2>
         <div class="program__grid">
           <div class="program__card">
             <div
@@ -497,36 +527,11 @@
             </summary>
             <div class="faq__answer">
               <p>
-                Официальные билеты доступны на сайте мероприятия:
-                <a
-                  href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
-                  class="faq__link"
-                  >(купить билет).</a
+                Официальные билеты доступны на сайте мероприятия через виджет
+                оператора RADARIO. Подробная информация о платежной системе по
+                <a href="https://business.radario.ru/support" class="faq__link"
+                  >ссылке.</a
                 >
-                через виджет оператора radario.
-              </p>
-            </div>
-          </details>
-          <details class="faq__item">
-            <summary class="faq__question">
-              Какой возраст допускается на шоу?
-            </summary>
-            <div class="faq__answer">
-              <p>
-                Шоу доступно для посетителей всех возрастов. Дети до 14 лет
-                могут посетить концерт только в сопровождении родителя или
-                законного представителя.
-              </p>
-            </div>
-          </details>
-          <details class="faq__item">
-            <summary class="faq__question">
-              Как добраться до МТС LIVE ХОЛЛ?
-            </summary>
-            <div class="faq__answer">
-              <p>
-                МТС LIVE ХОЛЛ расположен в Москве. Точный адрес и схему проезда
-                можно найти на официальном сайте площадки.
               </p>
             </div>
           </details>
@@ -537,7 +542,11 @@
             <div class="faq__answer">
               <p>
                 Условия возврата и обмена указаны в договоре оферты.
-                Ознакомьтесь с правилами на сайте оператора продажи.
+                Ознакомьтесь с
+                <a href="https://business.radario.ru/support" class="faq__link"
+                  >правилами</a
+                >
+                на сайте оператора продажи.
               </p>
             </div>
           </details>
@@ -553,27 +562,37 @@
     <footer class="page-footer" id="page-footer">
       <div class="page-footer__inner">
         <div class="page-footer__requisites">
-          <p class="page-footer__requisite">Март (концертное агентство)</p>
+          <p class="page-footer__requisite">ИП Войтович</p>
           <p class="page-footer__requisite">ИНН 5012116880</p>
           <p class="page-footer__requisite">ОГРН 1265000008900</p>
         </div>
         <div class="page-footer__brand">
-          <div
-            class="page-footer__logo t-bgimg"
-            data-original="./img/alpha_logo.png"
-            style="background-image: url(&quot;img/alpha_logo.png&quot;)"
-            role="img"
-            aria-label="Логотип"
-          ></div>
+          <div class="hero__socials">
+            <a class="hero__social-btn" href="#" aria-label="YouTube">
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/Max.svg&quot;)"
+              ></span>
+            </a>
+            <a class="hero__social-btn" href="#" aria-label="TikTok">
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/vk.svg&quot;)"
+              ></span>
+            </a>
+            <a
+              class="hero__social-btn"
+              href="https://l.likee.video/p/dLTc2j"
+              aria-label="Likee"
+            >
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/inst.svg&quot;)"
+              ></span>
+            </a>
+          </div>
           Все права защищены
         </div>
-        <nav class="page-footer__nav">
-          <a class="page-footer__nav-link" href="#"
-            >Политика конфиденциальности</a
-          >
-          <a class="page-footer__nav-link" href="#">Оферта</a>
-          <a class="page-footer__nav-link" href="#">Реквизиты</a>
-        </nav>
       </div>
     </footer>
 
@@ -600,5 +619,6 @@
 
     <!-- Основной JS Концертное агентство "Март" -->
     <script src="js/main.js"></script>
+    <script src="js/burger.js"></script>
   </body>
 </html>
