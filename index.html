@@ -32,11 +32,12 @@
     <header class="page-header" id="page-header">
       <nav class="page-nav">
         <div class="page-nav__btn-wrapper">
-          <div class="page-nav__btn-bg">
+          <div class="page-nav__btn-bg" id="nav-btn">
             <span class="page-nav__btn-icon">+</span>
             <a
               class="page-nav__buy-btn"
               href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
+              id="buy-btn"
               >КУПИТЬ БИЛЕТ</a
             >
           </div>
@@ -51,15 +52,35 @@
               href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
               >17 МАЯ 2026</a
             >
-            <p class="page-nav__dropdown-note">
-              Купите билеты сразу<br />на 2 дня с выгодой
-            </p>
-            <p class="page-nav__dropdown-sub">
-              Доступно для лаунж зон,<br />танц партера и фан зон
-            </p>
+            <p class="page-nav__dropdown-note">Успей купить билеты заранее.</p>
+            <p class="page-nav__dropdown-sub">БРОНИРУЙ лучшие места!</p>
           </div>
         </div>
+
+        <!-- Бургер -->
+        <button class="burger" id="burger" aria-label="Меню">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+        <div class="mobile-menu" id="mobile-menu">
+          <button
+            class="mobile-menu__close"
+            id="mobile-menu-close"
+            aria-label="Закрыть"
+          >
+            ×
+          </button>
+          <nav class="mobile-menu__nav">
+            <a class="mobile-menu__link" href="#">Мероприятия</a>
+            <a class="mobile-menu__link" href="index.html">Афиша</a>
+            <a class="mobile-menu__link" href="#">Архив</a>
+          </nav>
+        </div>
       </nav>
+
+      <!-- Мобильное меню -->
+      <div class="mobile-menu__overlay" id="mobile-menu-overlay"></div>
     </header>
 
     <!-- ═══════════════════════════════════════════════════
@@ -75,28 +96,23 @@
         <div class="hero__bg-overlay"></div>
       </div>
       <div class="hero__content">
-        <div
-          class="hero__logo t-bgimg"
-          data-original="./img/alpha_logo.png"
-          aria-label="Логотип Концертное агентство «Март»"
-          role="img"
-        ></div>
-        <p class="hero__tagline">Оркестр «Новое время» возвращается</p>
+        <p class="hero__tagline">Оркестр «Новое время»</p>
         <div class="hero__meta">
-          <span class="hero__date">май - октябрь 2026</span>
-          <span class="hero__venue">В ТВОЕМ ГОРОДЕ</span>
+          <span class="hero__venue"
+            >Стань частью одного большого музыкального сердца</span
+          >
         </div>
         <div class="hero__socials">
           <a class="hero__social-btn" href="#" aria-label="YouTube">
             <span
               class="hero__social-icon"
-              style="--icon: url(&quot;../img/yt.svg&quot;)"
+              style="--icon: url(&quot;../img/Max.svg&quot;)"
             ></span>
           </a>
           <a class="hero__social-btn" href="#" aria-label="TikTok">
             <span
               class="hero__social-icon"
-              style="--icon: url(&quot;../img/tt.svg&quot;)"
+              style="--icon: url(&quot;../img/vk.svg&quot;)"
             ></span>
           </a>
           <a
@@ -106,13 +122,7 @@
           >
             <span
               class="hero__social-icon"
-              style="--icon: url(&quot;../img/like.svg&quot;)"
-            ></span>
-          </a>
-          <a class="hero__social-btn" href="#" aria-label="Telegram">
-            <span
-              class="hero__social-icon"
-              style="--icon: url(&quot;../img/tg.svg&quot;)"
+              style="--icon: url(&quot;../img/inst.svg&quot;)"
             ></span>
           </a>
         </div>
@@ -120,12 +130,10 @@
       <div class="hero__ticker-wrapper">
         <div class="hero__ticker-track hero__ticker-track--white">
           <div class="hero__ticker-text" id="ticker1">
-            2 дня ✦ каждый день новые выступления ✦ 4 формата развлечений ✦
-            фан-зона в центре сцены ✦ мастер-классы от ведущих брендов ✦ зона
-            аттракционов ✦ иммерсивное шоу 306 ✦ сцена-трансформер ✦ 2 дня ✦
-            каждый день новые выступления ✦ 4 формата развлечений ✦ фан-зона в
-            центре сцены ✦ мастер-классы от ведущих брендов ✦ зона аттракционов
-            ✦ иммерсивное шоу 306 ✦ сцена-трансформер ✦
+            Прозвучат композиции: «Батарейка», «Кукла колдуна», «Крошка моя»,
+            «Районы, кварталы…», «Трава у дома» и многие другие ❤️ Прозвучат
+            композиции: «Батарейка», «Кукла колдуна», «Крошка моя», «Районы,
+            кварталы…», «Трава у дома» и многие другие ❤️
           </div>
         </div>
         <div class="hero__ticker-track hero__ticker-track--green">
@@ -133,12 +141,10 @@
             class="hero__ticker-text hero__ticker-text--reverse"
             id="ticker2"
           >
-            2 дня ✦ каждый день новые выступления ✦ 4 формата развлечений ✦
-            фан-зона в центре сцены ✦ мастер-классы от ведущих брендов ✦ зона
-            аттракционов ✦ иммерсивное шоу 306 ✦ сцена-трансформер ✦ 2 дня ✦
-            каждый день новые выступления ✦ 4 формата развлечений ✦ фан-зона в
-            центре сцены ✦ мастер-классы от ведущих брендов ✦ зона аттракционов
-            ✦ иммерсивное шоу 306 ✦ сцена-трансформер ✦
+            Прозвучат композиции: «Батарейка», «Кукла колдуна», «Крошка моя»,
+            «Районы, кварталы…», «Трава у дома» и многие другие ❤️ Прозвучат
+            композиции: «Батарейка», «Кукла колдуна», «Крошка моя», «Районы,
+            кварталы…», «Трава у дома» и многие другие ❤️
           </div>
         </div>
       </div>
@@ -148,17 +154,26 @@
        О ШОУ
        Блок: about
   ═══════════════════════════════════════════════════ -->
-
+    <!-- 
     <section class="about section--hidden section--visible" id="about">
       <div class="about__inner">
         <h2 class="about__title">О МЕРОПРИЯТИИ</h2>
 
         <p class="about__description">
-          По многочисленным просьбам жителей и гостей Луганска оркестр «Новое
-          время» возвращается с гастролями — с новой программой
-          <strong>«КАРАОКЕ»</strong>. Мы споём это вместе, потому что такие
-          песни невозможно слушать молча.
+          Волшебные концерт Симфонического оркестра «Новое время». Мировая
+          классика, саундтреки и хиты всех времен. 2000 свечей создадут
+          атмосферу, которую невозможно передать словами. Ощутите незабываемые
+          эмоции.
         </p>
+
+        <blockquote class="about__quote">
+          <p class="about__quote-text">
+            Путешествуй сквозь время в ритме <em>души</em>
+          </p>
+          <cite class="about__quote-author"
+            >Оркестр Нового Времени / Orchestra of New Time</cite
+          >
+        </blockquote>
 
         <div class="about__gallery">
           <div
@@ -179,19 +194,20 @@
           <h3 class="about__utp-title">Почему стоит прийти</h3>
           <ul class="about__utp-list">
             <li class="about__utp-item">
-              🎤 Пойте вместе с оркестром — здесь разрешено всё: петь, хлопать,
-              плакать от ностальгии
+              На сцене — Оркестр «Новое время» с программой «Караоке».
+              <strong>В зале — твой голос,</strong> твоё настроение, твоя
+              история. Приходи петь, чувствовать и быть частью одного большого
+              музыкального сердца.
             </li>
             <li class="about__utp-item">
-              🕯️ Более 2 000 свечей создадут невероятную атмосферу
+              Будут звучать <strong>лучшие композиции</strong>: «Батарейка»,
+              «Кукла колдуна», «Матушка-Земля», «Районы, кварталы», «Крошка
+              моя», «Трава у дома» и многие другие.
             </li>
             <li class="about__utp-item">
-              🎵 Любимые хиты: «Батарейка», «Кукла колдуна», «Матушка-Земля»,
-              «Районы, кварталы», «Крошка моя», «Трава у дома» и многие другие
-            </li>
-            <li class="about__utp-item">
-              ❤️ Это не просто концерт — это встреча с собой, с музыкой, с
-              настоящими эмоциями
+              Здесь разрешено всё: петь, хлопать и плакать от ностальгии.
+              <strong>Более 2 000 свечей</strong> создадут невероятную
+              атмосферу.
             </li>
           </ul>
         </div>
@@ -199,25 +215,19 @@
         <div class="about__facts">
           <div class="about__fact">
             <p class="about__fact-text">
-              <strong>Формат:</strong> живой оркестр, интерактивное пение всем
-              залом, свечная атмосфера, спецэффекты
+              Формат: живой оркестр, интерактивное пение всем залом, свечная
+              атмосфера, спецэффекты.
             </p>
           </div>
           <div class="about__fact">
             <p class="about__fact-text">
-              На сцене — Оркестр «Новое время».<br />
-              В зале — твой голос, твоё настроение, твоя история.
-            </p>
-          </div>
-          <div class="about__fact">
-            <p class="about__fact-text">
-              Приходи петь, чувствовать и быть частью одного большого
-              музыкального сердца.
+              Это не просто концерт — <strong>это встреча</strong> с собой, с
+              музыкой, с настоящими эмоциями ❤️
             </p>
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- ═══════════════════════════════════════════════════
        ПРОГРАММА
@@ -226,18 +236,86 @@
 
     <section class="program" id="program">
       <div class="program__inner">
-        <h2 class="program__title">Афиша</h2>
+        <h2 class="program__title">Лучшие мероприятия вашего города</h2>
         <div class="program__grid">
-          <div class="program__card">
+          <div class="program__card" style="flex: 0 0 340px">
+            <div class="program__card-info">
+              <div class="program__card-cities">
+                <div class="program__card-city-list">
+                  <a
+                    class="program__card-city-link"
+                    href="single.html?city=sochi"
+                  >
+                    <svg
+                      class="program__card-geo-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"
+                      />
+                      <circle cx="12" cy="9" r="2.5" />
+                    </svg>
+                    Сочи
+                  </a>
+                  <a
+                    class="program__card-city-link"
+                    href="single.html?city=gelendzhik"
+                  >
+                    <svg
+                      class="program__card-geo-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"
+                      />
+                      <circle cx="12" cy="9" r="2.5" />
+                    </svg>
+                    Геленджик
+                  </a>
+                  <a
+                    class="program__card-city-link"
+                    href="single.html?city=novorossiysk"
+                  >
+                    <svg
+                      class="program__card-geo-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"
+                      />
+                      <circle cx="12" cy="9" r="2.5" />
+                    </svg>
+                    Новороссийск
+                  </a>
+                </div>
+              </div>
+            </div>
             <div
               class="program__card-photo"
-              style="background-image: url(&quot;img/program_5.JPG&quot;)"
+              style="
+                background-image: url(&quot;img/lubov_v_kvadrate.jpg&quot;);
+              "
             ></div>
             <div class="program__card-info">
-              <p class="program__card-city">Луганск</p>
-              <p class="program__card-date">16–17 мая</p>
-              <p class="program__card-title">Караоке с оркестром</p>
-              <p class="program__card-venue">Дворец им. В.И. Ленина</p>
+              <p class="program__card-title">«Любовь в квадрате»</p>
               <a
                 class="program__card-btn"
                 href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
@@ -246,10 +324,258 @@
             </div>
           </div>
 
-          <div class="program__card">
+          <div class="program__card" style="flex: 0 0 340px">
+            <div class="program__card-info">
+              <div class="program__card-cities">
+                <div class="program__card-city-list">
+                  <a class="program__card-city-link" href="#">
+                    <svg
+                      class="program__card-geo-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"
+                      />
+                      <circle cx="12" cy="9" r="2.5" />
+                    </svg>
+                    Луганск
+                  </a>
+                </div>
+              </div>
+            </div>
             <div
               class="program__card-photo"
-              style="background-image: url(&quot;img/program_1.JPG&quot;)"
+              style="background-image: url(&quot;img/program_3.JPG&quot;)"
+            ></div>
+            <div class="program__card-info">
+              <p class="program__card-title">Караоке с оркестром</p>
+              <a
+                class="program__card-btn"
+                href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
+                >КУПИТЬ БИЛЕТ</a
+              >
+            </div>
+          </div>
+
+          <div class="program__card" style="flex: 0 0 340px">
+            <div class="program__card-info">
+              <div class="program__card-cities">
+                <div class="program__card-city-list">
+                  <a class="program__card-city-link" href="#">
+                    <svg
+                      class="program__card-geo-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"
+                      />
+                      <circle cx="12" cy="9" r="2.5" />
+                    </svg>
+                    Сочи
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="program__card-photo"
+              style="
+                background-image: url(&quot;img/uptachneniya_v_prekrasnom.jpg&quot;);
+              "
+            ></div>
+            <div class="program__card-info">
+              <p class="program__card-title">Упражнения в прекрасном</p>
+              <a
+                class="program__card-btn"
+                href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
+                >КУПИТЬ БИЛЕТ</a
+              >
+            </div>
+          </div>
+
+          <div class="program__card" style="flex: 0 0 340px">
+            <div class="program__card-info">
+              <div class="program__card-cities">
+                <div class="program__card-city-list">
+                  <a
+                    class="program__card-city-link"
+                    href="single.html?city=sochi"
+                  >
+                    <svg
+                      class="program__card-geo-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"
+                      />
+                      <circle cx="12" cy="9" r="2.5" />
+                    </svg>
+                    Сочи
+                  </a>
+                  <a
+                    class="program__card-city-link"
+                    href="single.html?city=gelendzhik"
+                  >
+                    <svg
+                      class="program__card-geo-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"
+                      />
+                      <circle cx="12" cy="9" r="2.5" />
+                    </svg>
+                    Геленджик
+                  </a>
+                  <a
+                    class="program__card-city-link"
+                    href="single.html?city=novorossiysk"
+                  >
+                    <svg
+                      class="program__card-geo-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"
+                      />
+                      <circle cx="12" cy="9" r="2.5" />
+                    </svg>
+                    Новороссийск
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="program__card-photo"
+              style="
+                background-image: url(&quot;img/lubov_v_kvadrate.jpg&quot;);
+              "
+            ></div>
+            <div class="program__card-info">
+              <p class="program__card-title">«Любовь в квадрате»</p>
+              <a
+                class="program__card-btn"
+                href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
+                >КУПИТЬ БИЛЕТ</a
+              >
+            </div>
+          </div>
+
+          <div class="program__card" style="flex: 0 0 340px">
+            <div class="program__card-info">
+              <div class="program__card-cities">
+                <div class="program__card-city-list">
+                  <a class="program__card-city-link" href="#">
+                    <svg
+                      class="program__card-geo-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"
+                      />
+                      <circle cx="12" cy="9" r="2.5" />
+                    </svg>
+                    Луганск
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="program__card-photo"
+              style="background-image: url(&quot;img/program_3.JPG&quot;)"
+            ></div>
+            <div class="program__card-info">
+              <p class="program__card-title">Караоке с оркестром</p>
+              <a
+                class="program__card-btn"
+                href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
+                >КУПИТЬ БИЛЕТ</a
+              >
+            </div>
+          </div>
+
+          <div class="program__card" style="flex: 0 0 340px">
+            <div class="program__card-info">
+              <div class="program__card-cities">
+                <div class="program__card-city-list">
+                  <a class="program__card-city-link" href="#">
+                    <svg
+                      class="program__card-geo-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"
+                      />
+                      <circle cx="12" cy="9" r="2.5" />
+                    </svg>
+                    Сочи
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="program__card-photo"
+              style="
+                background-image: url(&quot;img/uptachneniya_v_prekrasnom.jpg&quot;);
+              "
+            ></div>
+            <div class="program__card-info">
+              <p class="program__card-title">Упражнения в прекрасном</p>
+              <a
+                class="program__card-btn"
+                href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
+                >КУПИТЬ БИЛЕТ</a
+              >
+            </div>
+          </div>
+
+          <!-- <div class="program__card">
+            <div
+              class="program__card-photo"
+              style="
+                background-image: url(&quot;img/lubov_v_kvadrate.jpg&quot;);
+              "
             ></div>
             <div class="program__card-info">
               <p class="program__card-city">Сочи</p>
@@ -285,7 +611,9 @@
           <div class="program__card">
             <div
               class="program__card-photo"
-              style="background-image: url(&quot;img/program_3.JPG&quot;)"
+              style="
+                background-image: url(&quot;img/uptachneniya_v_prekrasnom.jpg&quot;);
+              "
             ></div>
             <div class="program__card-info">
               <p class="program__card-city">Сочи</p>
@@ -318,7 +646,7 @@
                 >КУПИТЬ БИЛЕТ</a
               >
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="program__dots carousel__dots"></div>
       </div>
@@ -445,106 +773,67 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════
-       ГОРИЗОНТАЛЬНАЯ ГАЛЕРЕЯ (перетаскивание)
-       Блок: scroll-gallery
+       Форма заявок
+       Блок: corporate
   ═══════════════════════════════════════════════════ -->
-
-    <section class="scroll-gallery" id="scroll-gallery">
-      <div class="scroll-gallery__track" id="scroll-gallery-track">
-        <div
-          class="scroll-gallery__item"
-          style="background-image: url(&quot;img/program_1.JPG&quot;)"
-        ></div>
-        <div
-          class="scroll-gallery__item"
-          style="background-image: url(&quot;img/program_2.JPG&quot;)"
-        ></div>
-        <div
-          class="scroll-gallery__item"
-          style="background-image: url(&quot;img/program_3.JPG&quot;)"
-        ></div>
-        <div
-          class="scroll-gallery__item"
-          style="background-image: url(&quot;img/program_4.JPG&quot;)"
-        ></div>
-        <div
-          class="scroll-gallery__item"
-          style="background-image: url(&quot;img/program_5.JPG&quot;)"
-        ></div>
-        <div
-          class="scroll-gallery__item"
-          style="background-image: url(&quot;img/about_1.JPG&quot;)"
-        ></div>
-        <div
-          class="scroll-gallery__item"
-          style="background-image: url(&quot;img/about_2.JPG&quot;)"
-        ></div>
+    <section class="corporate" id="corporate">
+      <div class="corporate__inner">
+        <h2 class="corporate__title">
+          Корпоративным клиентам —<br />
+          <span class="corporate__title-accent">скидка 10%</span>
+        </h2>
+        <p class="corporate__desc">
+          Скидка предоставляется при покупке от 10 билетов.<br />
+          Чтобы получить скидку, оставьте заявку.
+        </p>
+        <form class="corporate__form" id="corporate-form">
+          <div class="corporate__form-fields">
+            <input
+              class="corporate__input"
+              type="text"
+              name="name"
+              placeholder="Имя, фамилия"
+              required
+            />
+            <input
+              class="corporate__input"
+              type="email"
+              name="email"
+              placeholder="Ваш email"
+              required
+            />
+            <input
+              class="corporate__input"
+              type="tel"
+              name="phone"
+              placeholder="Телефон"
+              required
+            />
+            <button class="corporate__btn" type="submit">
+              ОСТАВИТЬ ЗАЯВКУ
+            </button>
+          </div>
+          <label class="corporate__acceptance">
+            <input
+              class="corporate__checkbox"
+              type="checkbox"
+              name="acceptance"
+              required
+            />
+            <span class="corporate__acceptance-text">
+              Нажимая на кнопку, вы даёте согласие на
+              <a class="corporate__acceptance-link" href="#"
+                >обработку персональных данных</a
+              >
+              и соглашаетесь с
+              <a class="corporate__acceptance-link" href="#"
+                >политикой конфиденциальности</a
+              >
+            </span>
+          </label>
+        </form>
       </div>
     </section>
-
-    <!-- ═══════════════════════════════════════════════════
-       ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
-       Блок: faq
-  ═══════════════════════════════════════════════════ -->
-
-    <section class="faq" id="faq">
-      <div class="faq__inner">
-        <h2 class="faq__title">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h2>
-        <div class="faq__list">
-          <details class="faq__item">
-            <summary class="faq__question">
-              Где купить официальные билеты?
-            </summary>
-            <div class="faq__answer">
-              <p>
-                Официальные билеты доступны на сайте мероприятия:
-                <a
-                  href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
-                  class="faq__link"
-                  >(купить билет).</a
-                >
-                через виджет оператора radario.
-              </p>
-            </div>
-          </details>
-          <details class="faq__item">
-            <summary class="faq__question">
-              Какой возраст допускается на шоу?
-            </summary>
-            <div class="faq__answer">
-              <p>
-                Шоу доступно для посетителей всех возрастов. Дети до 14 лет
-                могут посетить концерт только в сопровождении родителя или
-                законного представителя.
-              </p>
-            </div>
-          </details>
-          <details class="faq__item">
-            <summary class="faq__question">
-              Как добраться до МТС LIVE ХОЛЛ?
-            </summary>
-            <div class="faq__answer">
-              <p>
-                МТС LIVE ХОЛЛ расположен в Москве. Точный адрес и схему проезда
-                можно найти на официальном сайте площадки.
-              </p>
-            </div>
-          </details>
-          <details class="faq__item">
-            <summary class="faq__question">
-              Можно ли вернуть или обменять билет?
-            </summary>
-            <div class="faq__answer">
-              <p>
-                Условия возврата и обмена указаны в договоре оферты.
-                Ознакомьтесь с правилами на сайте оператора продажи.
-              </p>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
     <!-- ═══════════════════════════════════════════════════
        ФУТЕР
        Блок: page-footer
@@ -553,27 +842,37 @@
     <footer class="page-footer" id="page-footer">
       <div class="page-footer__inner">
         <div class="page-footer__requisites">
-          <p class="page-footer__requisite">Март (концертное агентство)</p>
+          <p class="page-footer__requisite">ИП Войтович</p>
           <p class="page-footer__requisite">ИНН 5012116880</p>
           <p class="page-footer__requisite">ОГРН 1265000008900</p>
         </div>
         <div class="page-footer__brand">
-          <div
-            class="page-footer__logo t-bgimg"
-            data-original="./img/alpha_logo.png"
-            style="background-image: url(&quot;img/alpha_logo.png&quot;)"
-            role="img"
-            aria-label="Логотип"
-          ></div>
+          <div class="hero__socials">
+            <a class="hero__social-btn" href="#" aria-label="YouTube">
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/Max.svg&quot;)"
+              ></span>
+            </a>
+            <a class="hero__social-btn" href="#" aria-label="TikTok">
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/vk.svg&quot;)"
+              ></span>
+            </a>
+            <a
+              class="hero__social-btn"
+              href="https://l.likee.video/p/dLTc2j"
+              aria-label="Likee"
+            >
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/inst.svg&quot;)"
+              ></span>
+            </a>
+          </div>
           Все права защищены
         </div>
-        <nav class="page-footer__nav">
-          <a class="page-footer__nav-link" href="#"
-            >Политика конфиденциальности</a
-          >
-          <a class="page-footer__nav-link" href="#">Оферта</a>
-          <a class="page-footer__nav-link" href="#">Реквизиты</a>
-        </nav>
       </div>
     </footer>
 
@@ -600,5 +899,6 @@
 
     <!-- Основной JS Концертное агентство "Март" -->
     <script src="js/main.js"></script>
+    <script src="js/burger.js"></script>
   </body>
 </html>
