@@ -55,6 +55,40 @@
   .page-footer {
     padding: 48px 24px;
   }
+
+  /* event */
+  .events-hero {
+    padding: 120px 24px 50px;
+  }
+  .events-filters {
+    padding: 0 24px 40px;
+  }
+  .events-list {
+    padding: 0 24px 60px;
+  }
+  .event-card {
+    grid-template-columns: 260px 1fr auto;
+    gap: 24px;
+  }
+  .event-card__actions {
+    min-width: 160px;
+  }
+
+  /* page archive */
+
+  .archive-hero {
+    padding: 120px 24px 50px;
+  }
+  .archive-grid-section {
+    padding: 50px 24px 60px;
+  }
+  .archive-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .archive-cta {
+    padding: 50px 24px;
+  }
 }
 
 /* ── TABLET (max-width: 992px) ──────────────────────── */
@@ -186,7 +220,34 @@
     width: 90px;
     height: 90px;
   }
-  
+  /* page event */
+  .events-filters {
+    top: 64px;
+  }
+  .event-card {
+    grid-template-columns: 220px 1fr;
+    gap: 20px;
+  }
+  .event-card__actions {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    min-width: unset;
+  }
+  .event-card__btn {
+    flex: 1;
+  }
+  /* city-switcher */
+  .city-card__info {
+    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* page archive */
+
+  .archive-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
 }
 
 /* ── SMALL-TABLET (max-width: 768px) ────────────────── */
@@ -259,7 +320,7 @@
   }
   .program__card-info {
     padding: 16px;
-    gap: 4px;
+    gap: 8px;
   }
   .program__card-city {
     font-size: 16px;
@@ -307,6 +368,35 @@
     font-size: 14px;
   }
 
+  /* corporate  */
+
+  .corporate {
+    padding: 50px 20px;
+  }
+  .corporate__form-fields {
+    flex-direction: column;
+  }
+  .corporate__title {
+    max-width: 576px;
+  }
+
+  .corporate__desc {
+    max-width: 380px;
+  }
+
+  .corporate__input {
+    padding: 12px 24px;
+  }
+
+  .corporate__input,
+  .corporate__btn {
+    width: 100%;
+    min-width: unset;
+  }
+  .corporate__btn {
+    height: 52px;
+  }
+
   /* Footer */
   .page-footer__inner {
     flex-direction: column;
@@ -321,6 +411,83 @@
   .page-footer__logo {
     width: 80px;
     height: 80px;
+  }
+
+  /* page event */
+  .events-hero {
+    padding: 100px 20px 40px;
+  }
+  .event-hero__title {
+    font-size: 40px;
+  }
+  .events-filters {
+    padding: 0 20px 28px;
+    top: 60px;
+  }
+  .events-list {
+    padding: 0 20px 50px;
+  }
+  .events-filters__row {
+    gap: 8px;
+  }
+  .events-filter__btn {
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+  .event-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .event-card__photo {
+    aspect-ratio: 16/9;
+  }
+  .event-card__actions {
+    flex-direction: row;
+  }
+  .events-filters__clear-all {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* page single */
+  .event-hero__bg {
+    background-size: 150%;
+  }
+
+  .event-hero__content {
+    padding: 0 15px 60px;
+  }
+  .city-card {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .city-card__btn {
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+  }
+
+  /* page archive */
+  .archive-hero {
+    padding: 100px 20px 40px;
+  }
+  .archive-grid-section {
+    padding: 40px 20px 50px;
+  }
+  .archive-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .archive-card__body {
+    padding: 16px 18px 18px;
+  }
+  .archive-card__title {
+    font-size: 15px;
+  }
+  .archive-cta {
+    padding: 40px 20px;
   }
 }
 
@@ -432,6 +599,10 @@
     font-size: 26px;
     margin-bottom: 20px;
   }
+  .program__card-cities {
+    padding: 0;
+    height: 90px;
+  }
   .program__card {
     flex: 0 0 200px;
   }
@@ -477,6 +648,13 @@
     width: 320px;
     height: 400px;
   }
+  /* corporate */
+  .corporate__inner {
+    gap: 16px;
+  }
+  .corporate__title {
+    max-width: 430px;
+  }
 
   /* FAQ */
   .faq {
@@ -513,6 +691,66 @@
   .page-footer__requisite,
   .page-footer__nav-link {
     font-size: 14px;
+  }
+
+  /* page event */
+  .events-hero {
+    padding: 90px 16px 32px;
+  }
+  .events-filters {
+    padding: 0 16px 20px;
+  }
+  .events-list {
+    padding: 0 16px 40px;
+  }
+  .event-card__btn {
+    height: 44px;
+    font-size: 12px;
+    padding: 0 16px;
+  }
+  .event-card__date {
+    font-size: 28px;
+  }
+
+  /* page single */
+  .city-card__info {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .about__people {
+    grid-template-columns: 1fr;
+  }
+
+  .event-hero__content {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0 15px 10px;
+  }
+
+  .event-hero__title {
+    font-size: 24px;
+  }
+
+  .event-hero__meta-value,
+  .event-hero__desc {
+    font-size: 14px;
+  }
+  /* page archive */
+  .archive-hero {
+    padding: 100px 16px 32px;
+  }
+  .archive-grid-section {
+    padding: 32px 16px 40px;
+  }
+  .archive-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .archive-card__photo {
+    aspect-ratio: 16/9;
+  }
+  .archive-cta {
+    padding: 32px 16px;
   }
 }
 
@@ -577,14 +815,28 @@
   .program__card {
     flex: 0 0 180px;
   }
-  .program__card-photo {
-    height: 120px;
+  .program__card-info {
+    padding: 14px;
   }
+  .program__card-city-link {
+    font-size: 14px;
+  }
+
   .program__card-date {
     font-size: 16px;
   }
   .program__card-city {
     font-size: 14px;
+  }
+
+  /* corporate */
+
+  .corporate__input,
+  .corporate__btn {
+    font-size: 12px;
+  }
+  .corporate__btn {
+    height: 42px;
   }
 
   /* Artists */
