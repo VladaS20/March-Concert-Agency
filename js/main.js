@@ -446,4 +446,26 @@
       emailInput.style.borderColor = "";
     });
   }
+  document.querySelectorAll(".program__card-buy-bg").forEach(function (bg) {
+    bg.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var wrapper = bg.closest(".program__card-buy-wrapper");
+      var isOpen = wrapper.classList.contains("buy--open");
+      // закрыть все
+      document
+        .querySelectorAll(".program__card-buy-wrapper")
+        .forEach(function (w) {
+          w.classList.remove("buy--open");
+        });
+      if (!isOpen) wrapper.classList.add("buy--open");
+    });
+  });
+
+  document.addEventListener("click", function () {
+    document
+      .querySelectorAll(".program__card-buy-wrapper")
+      .forEach(function (w) {
+        w.classList.remove("buy--open");
+      });
+  });
 })();

@@ -56,6 +56,19 @@
     padding: 48px 24px;
   }
 
+  /* single */
+
+  .event-hero__title {
+    font-size: 35px;
+  }
+
+  .event-hero__right {
+    max-height: 600px;
+  }
+
+  .event-hero__left .page-nav__btn-wrapper {
+    width: 100%;
+  }
   /* event */
   .events-hero {
     padding: 120px 24px 50px;
@@ -279,10 +292,10 @@
   .hero__socials {
     gap: 8px;
   }
-  .hero__social-btn {
+  /* .hero__social-btn {
     width: 36px;
     height: 36px;
-  }
+  } */
   .hero__ticker-track {
     height: 48px;
   }
@@ -455,9 +468,6 @@
     background-size: 150%;
   }
 
-  .event-hero__content {
-    padding: 0 15px 60px;
-  }
   .city-card {
     flex-direction: column;
     padding: 20px;
@@ -724,7 +734,6 @@
   .event-hero__content {
     grid-template-columns: 1fr;
     gap: 15px;
-    padding: 0 15px 10px;
   }
 
   .event-hero__title {
@@ -786,14 +795,14 @@
   .hero__venue {
     font-size: 12px;
   }
-  .hero__social-btn {
+  /* .hero__social-btn {
     width: 32px;
     height: 32px;
-  }
-  .hero__social-icon {
+  } */
+  /* .hero__social-icon {
     width: 16px;
     height: 16px;
-  }
+  } */
   .hero__ticker-text {
     font-size: 11px;
   }
@@ -868,5 +877,97 @@
   .faq__question {
     font-size: 12px;
     padding: 10px 12px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   ОБНОВЛЁННЫЙ EVENT-HERO (split layout)
+   Текст слева, фото справа на белом фоне
+═══════════════════════════════════════════════════════ */
+
+/* ── 992px ── */
+@media (max-width: 992px) {
+  .event-hero__city-tag {
+    font-size: 18px;
+  }
+  .event-hero__left .page-nav__btn-wrapper {
+    width: 100%;
+  }
+  .event-hero__left .page-nav__btn-bg {
+    width: 100%;
+  }
+  .event-hero__left .page-nav__buy-btn {
+    flex: 1;
+  }
+}
+
+/* ── 768px — складывается в колонку ── */
+@media (max-width: 768px) {
+  .event-hero {
+    min-height: auto;
+  }
+  .event-hero__content {
+    grid-template-columns: 1fr;
+  }
+  .event-hero__left {
+    padding: 40px 20px 32px;
+    order: 2;
+  }
+  .event-hero__right {
+    min-height: 60vw;
+    max-height: 60vw;
+  }
+  .event-hero__title {
+    font-size: 36px;
+  }
+  .event-hero__city-tag {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  .event-hero__age {
+    bottom: 12px;
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    font-size: 13px;
+  }
+  .event-hero__left .page-nav__btn-wrapper {
+    width: 100%;
+  }
+  .event-hero__left .page-nav__dropdown {
+    width: 100%;
+  }
+}
+
+/* ── 576px ── */
+@media (max-width: 576px) {
+  .event-hero__right {
+    min-height: 80vw;
+    max-height: 80vw;
+  }
+  .event-hero__left {
+    padding: 28px 16px 24px;
+  }
+  .event-hero__title {
+    font-size: 28px;
+  }
+  .event-hero__city-tag {
+    font-size: 14px;
+  }
+  .event-hero__meta-value {
+    font-size: 14px;
+  }
+  .event-hero__desc {
+    font-size: 14px;
+  }
+  .event-hero__left .page-nav__btn-wrapper {
+    width: 100%;
+  }
+  .event-hero__left .page-nav__buy-btn {
+    font-size: 12px;
+    height: 36px;
+  }
+  .event-hero__left .page-nav__dropdown-item {
+    font-size: 16px;
   }
 }
