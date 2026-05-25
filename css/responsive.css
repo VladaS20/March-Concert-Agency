@@ -113,9 +113,6 @@
   .page-nav {
     padding: 0 20px;
   }
-  .page-nav__logo-img {
-    height: 36px;
-  }
   .page-nav__left {
     gap: 12px;
   }
@@ -286,9 +283,6 @@
   /* Header */
   .page-header {
     height: 60px;
-  }
-  .page-nav__logo-img {
-    height: 30px;
   }
   .page-nav__left {
     gap: 10px;
@@ -536,9 +530,6 @@
   }
   .page-nav {
     padding: 0 16px;
-  }
-  .page-nav__logo-img {
-    height: 28px;
   }
   .page-nav__left {
     gap: 8px;
@@ -804,7 +795,7 @@
 @media (max-width: 380px) {
   /* Header */
   .page-nav__logo-img {
-    height: 24px;
+    /* height: 24px; */
   }
   .page-nav__left {
     gap: 6px;
