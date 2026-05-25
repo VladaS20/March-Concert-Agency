@@ -1780,7 +1780,7 @@ ul {
 
 .events-hero__title {
   font-family: var(--font-display);
-  font-size: clamp(40px, 6vw, 80px);
+  font-size: clamp(20px, 6vw, 80px);
   font-weight: 700;
   color: var(--color-gold);
   text-transform: uppercase;
