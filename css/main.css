@@ -126,10 +126,12 @@ ul {
 }
 
 .page-nav__logo-img {
-  height: 44px;
+  height: 52px;
   width: auto;
   display: block;
   object-fit: contain;
+  border-radius: 50%;
+  border: 1px solid var(--color-gold);
 }
 
 .page-nav__btn-wrapper {
