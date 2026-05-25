@@ -240,17 +240,17 @@ ul {
   display: inline-flex;
   align-items: center;
   background: var(--color-white);
-  border-radius: 15px;
+  border-radius: 22px;
   border: 2px solid #cfa24a;
-  padding: 5px 5px 5px 16px;
+  padding: 8px 8px 8px 24px;
   cursor: pointer;
 }
 
 .page-nav__btn-icon {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 300;
   color: var(--color-dark);
-  margin-right: 10px;
+  margin-right: 15px;
   transition: transform 0.3s ease;
   flex-shrink: 0;
 }
@@ -263,11 +263,11 @@ ul {
   color: var(--color-dark);
   font-family: var(--font-main);
   font-weight: 800;
-  font-size: 13px;
+  font-size: 20px;
   text-transform: uppercase;
-  padding: 0 20px;
-  height: 40px;
-  border-radius: 10px;
+  padding: 0 30px;
+  height: 60px;
+  border-radius: 15px;
   white-space: nowrap;
 }
 
@@ -429,6 +429,7 @@ ul {
 .hero {
   position: relative;
   min-height: 100vh;
+  height: 100vh; /* фиксируем высоту на один экран */
   background-color: var(--color-blue);
   overflow: hidden;
   display: flex;
@@ -464,25 +465,26 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 75px;
-  padding-bottom: 80px;
+  gap: 20px;
   flex: 1;
+  gap: 12px;
+  overflow: hidden;
+  padding-top: 60px;
 }
 
 .hero__tagline {
   color: var(--color-green);
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 45px;
+  font-size: clamp(24px, 3vw, 45px); /* адаптивный размер */
   text-align: center;
   line-height: 1.1;
-  margin-top: 16px;
+  margin-top: 8px;
   word-break: break-word;
   overflow-wrap: break-word;
-  max-width: 100%;
-  padding: 0 20px;
   max-width: 960px;
   width: 100%;
+  padding: 0 20px;
   text-transform: uppercase;
 }
 
@@ -491,11 +493,10 @@ ul {
   justify-content: center;
   text-align: center;
   gap: 40px;
-  margin-top: 24px;
-  max-width: 100%;
-  padding: 0 20px;
+  margin-top: 8px;
   max-width: 960px;
   width: 100%;
+  padding: 0 20px;
 }
 
 .hero__venue {
@@ -761,37 +762,39 @@ ul {
 }
 
 /* ── PROGRAM ────────────────────────────────────────── */
-
 .program {
   background: var(--color-white);
-  padding: 80px 40px;
+  padding: 19px 19px 16px;
+  border-radius: 32px;
+  width: calc(100% - 64px);
+  max-width: 1200px;
+  flex-shrink: 0;
 }
 
 .program__inner {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .program__title {
   font-family: var(--font-display);
-  font-size: 56px;
+  font-size: clamp(19px, 2.4vw, 32px);
   font-weight: 700;
   text-transform: uppercase;
   color: var(--color-blue);
-  margin-bottom: 40px;
+  margin-bottom: 13px;
   text-align: center;
 }
 
 .program__grid {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   overflow-x: auto;
   overflow-y: hidden;
   cursor: grab;
-  /* scroll-snap-type: x mandatory; */
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding-bottom: 16px;
+  padding-bottom: 13px;
 }
 .program__grid::-webkit-scrollbar {
   display: none;
@@ -799,36 +802,37 @@ ul {
 .program__grid:active {
   cursor: grabbing;
 }
+
 .program__card {
   background: #6e0f14;
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
 .program__card-cities {
-  padding: 20px 20px 16px;
+  padding: 16px 16px 13px;
   display: flex;
   justify-content: center;
-  height: 120px;
+  height: 96px;
   align-items: center;
 }
 
 .program__card-city-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
   align-items: center;
 }
 
 .program__card-city-link {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 16px;
+  font-size: 13px;
   color: var(--color-white);
   text-transform: uppercase;
   text-decoration: none;
@@ -839,8 +843,8 @@ ul {
 }
 
 .program__card-geo-icon {
-  width: 16px;
-  height: 16px;
+  width: 13px;
+  height: 13px;
   color: var(--color-gold);
   flex-shrink: 0;
 }
@@ -850,25 +854,26 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 16px 20px 20px;
-  gap: 12px;
+  padding: 13px 16px 16px;
+  gap: 10px;
   background: #6e0f14;
 }
 
 .program__card-photo {
-  height: 200px;
+  height: 160px;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
 }
 
 .program__card-title {
   font-family: var(--font-main);
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.4;
   text-align: center;
 }
+
 .program__card-btn {
   display: flex;
   align-items: center;
@@ -877,10 +882,10 @@ ul {
   color: var(--color-dark);
   font-family: var(--font-main);
   font-weight: 800;
-  font-size: 14px;
+  font-size: 11px;
   text-transform: uppercase;
-  height: 48px;
-  border-radius: 12px;
+  height: 38px;
+  border-radius: 10px;
   width: 100%;
   transition:
     background var(--transition-base),
@@ -894,7 +899,7 @@ ul {
   position: absolute;
   top: 0;
   left: -100%;
-  width: 75px;
+  width: 60px;
   height: 100%;
   background: linear-gradient(
     90deg,
@@ -914,13 +919,13 @@ ul {
 .carousel__dots {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
+  gap: 6px;
+  margin-top: 16px;
 }
 
 .carousel__dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.3);
   border: 1px solid #cfa24a;
@@ -935,7 +940,6 @@ ul {
   background: var(--color-green);
   transform: scale(1.4);
 }
-
 /* ── ARTISTS ────────────────────────────────────────── */
 .artists {
   background: var(--color-blue);
@@ -1264,13 +1268,13 @@ ul {
   flex: 1;
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  align-items: stretch;
+  align-items: center;
   padding-top: 90px;
 }
 
 /* Левая часть — текст */
 .event-hero__left {
-  padding: 0px 48px 60px 15px;
+  padding: 0px 48px 60px 48px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -1373,6 +1377,8 @@ ul {
   background-repeat: no-repeat;
   background-position: center top;
   border-radius: 50px 0 0 50px;
+  max-height: 558px;
+  height: 100%;
 }
 /* 
 .event-hero__photo {
