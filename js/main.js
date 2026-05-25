@@ -384,17 +384,38 @@
           observer.observe(el);
         });
     }
+    // var buyBtn = document.getElementById("buy-btn");
+    // var buyBtnHref = "#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b";
+
+    // function updateBuyBtn() {
+    //   if (!buyBtn) return;
+    //   if (window.innerWidth <= 992) {
+    //     buyBtn.removeAttribute("href");
+    //   } else {
+    //     buyBtn.setAttribute("href", buyBtnHref);
+    //   }
+    // }
+
     var buyBtn = document.getElementById("buy-btn");
-    var buyBtnHref = "#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b";
 
     function updateBuyBtn() {
       if (!buyBtn) return;
       if (window.innerWidth <= 992) {
-        buyBtn.removeAttribute("href");
+        // сохраняем href в data-атрибут чтобы не потерять
+        if (buyBtn.getAttribute("href")) {
+          buyBtn.dataset.href = buyBtn.getAttribute("href");
+          buyBtn.removeAttribute("href");
+        }
       } else {
-        buyBtn.setAttribute("href", buyBtnHref);
+        // восстанавливаем href из data-атрибута или оставляем как есть
+        if (!buyBtn.getAttribute("href") && buyBtn.dataset.href) {
+          buyBtn.setAttribute("href", buyBtn.dataset.href);
+        }
       }
     }
+
+    updateBuyBtn();
+    window.addEventListener("resize", updateBuyBtn);
 
     updateBuyBtn();
     window.addEventListener("resize", updateBuyBtn);
