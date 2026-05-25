@@ -127,6 +127,10 @@
     font-size: 18px;
   }
 
+  .mobile-menu {
+    width: 45%;
+  }
+
   /* Hero */
   .hero {
     min-height: 100svh;
@@ -274,6 +278,9 @@
   }
   .page-nav__dropdown-note {
     font-size: 10px;
+  }
+  .mobile-menu {
+    width: 60%;
   }
 
   /* Hero */
