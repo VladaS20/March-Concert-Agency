@@ -269,6 +269,7 @@ ul {
   border: 2px solid #cfa24a;
   padding: 8px 8px 8px 24px;
   cursor: pointer;
+  width: 100%;
 }
 
 .page-nav__btn-icon {
@@ -294,6 +295,7 @@ ul {
   height: 60px;
   border-radius: 15px;
   white-space: nowrap;
+  width: 100%;
 }
 
 .page-nav__buy-btn {
