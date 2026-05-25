@@ -91,7 +91,6 @@ ul {
   left: 0;
   width: 100%;
   z-index: 100;
-  height: 75px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,12 +125,12 @@ ul {
 }
 
 .page-nav__logo-img {
-  height: 52px;
+  height: 120px;
   width: auto;
   display: block;
   object-fit: contain;
-  border-radius: 50%;
-  border: 1px solid var(--color-gold);
+  /* border-radius: 50%;
+  border: 1px solid var(--color-gold); */
 }
 
 .page-nav__btn-wrapper {
@@ -455,8 +454,7 @@ ul {
 /* ── HERO ───────────────────────────────────────────── */
 .hero {
   position: relative;
-  min-height: 100vh;
-  height: 100vh; /* фиксируем высоту на один экран */
+  height: 100%;
   background-color: var(--color-blue);
   overflow: hidden;
   display: flex;
@@ -481,7 +479,7 @@ ul {
 .hero__bg-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* ── HERO CONTENT ───────────────────────────────────── */
@@ -494,9 +492,8 @@ ul {
   justify-content: center;
   gap: 20px;
   flex: 1;
-  gap: 12px;
   overflow: hidden;
-  padding-top: 60px;
+  padding: 120px 0 80px;
 }
 
 .hero__tagline {
@@ -790,7 +787,7 @@ ul {
 
 /* ── PROGRAM ────────────────────────────────────────── */
 .program {
-  background: var(--color-white);
+  background: rgba(17, 17, 17, 0.5);
   padding: 19px 19px 16px;
   border-radius: 32px;
   width: calc(100% - 64px);
@@ -808,7 +805,7 @@ ul {
   font-size: clamp(19px, 2.4vw, 32px);
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--color-blue);
+  color: var(--color-white);
   margin-bottom: 13px;
   text-align: center;
 }
@@ -822,6 +819,7 @@ ul {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   padding-bottom: 13px;
+  justify-content: center;
 }
 .program__grid::-webkit-scrollbar {
   display: none;
