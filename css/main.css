@@ -109,6 +109,29 @@ ul {
   position: relative;
 }
 
+/* Левая колонка: логотип + соцсети */
+.page-nav__left {
+  grid-column: 1;
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.page-nav__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.page-nav__logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
 .page-nav__btn-wrapper {
   grid-column: 2;
   justify-self: center;
@@ -812,10 +835,10 @@ ul {
 }
 
 .program__card-cities {
-  padding: 16px 16px 13px;
+  padding: 12px 12px 10px;
   display: flex;
   justify-content: center;
-  height: 96px;
+  height: 76px;
   align-items: center;
 }
 
@@ -843,8 +866,8 @@ ul {
 }
 
 .program__card-geo-icon {
-  width: 13px;
-  height: 13px;
+  width: 10px;
+  height: 10px;
   color: var(--color-gold);
   flex-shrink: 0;
 }
@@ -854,13 +877,13 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 13px 16px 16px;
+  padding: 10px 12px 12px;
   gap: 10px;
   background: #6e0f14;
 }
 
 .program__card-photo {
-  height: 160px;
+  height: 130px;
   background-size: cover;
   background-position: center top;
 }

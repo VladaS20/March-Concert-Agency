@@ -29,7 +29,7 @@
 
   /* Program */
   .program {
-    padding: 48px 19px;
+    padding: 34px 19px;
   }
   .program__title {
     font-size: 38px;
@@ -112,6 +112,12 @@
   }
   .page-nav {
     padding: 0 20px;
+  }
+  .page-nav__logo-img {
+    height: 36px;
+  }
+  .page-nav__left {
+    gap: 12px;
   }
   .page-nav__buy-btn {
     font-size: 12px;
@@ -280,6 +286,12 @@
   /* Header */
   .page-header {
     height: 60px;
+  }
+  .page-nav__logo-img {
+    height: 30px;
+  }
+  .page-nav__left {
+    gap: 10px;
   }
   .page-nav__dropdown-item {
     font-size: 16px;
@@ -525,6 +537,12 @@
   .page-nav {
     padding: 0 16px;
   }
+  .page-nav__logo-img {
+    height: 28px;
+  }
+  .page-nav__left {
+    gap: 8px;
+  }
   .page-nav__buy-btn {
     font-size: 18px;
     height: 48px;
@@ -554,7 +572,6 @@
   }
   .burger {
     transform: scale(1.2);
-    margin-top: 20px;
   }
   .mobile-menu {
     width: 100%;
@@ -618,7 +635,7 @@
   }
   /* Program */
   .program {
-    padding: 32px 13px;
+    padding: 25px 10px;
   }
   .program__title {
     font-size: 21px;
@@ -786,6 +803,12 @@
 /* ── SMALL-MOBILE (max-width: 380px) ────────────────── */
 @media (max-width: 380px) {
   /* Header */
+  .page-nav__logo-img {
+    height: 24px;
+  }
+  .page-nav__left {
+    gap: 6px;
+  }
   .page-nav__buy-btn {
     font-size: 10px;
     height: 30px;
@@ -815,16 +838,13 @@
   .hero__venue {
     font-size: 12px;
   }
-  /* .hero__social-btn {
-    width: 32px;
-    height: 32px;
-  } */
-  /* .hero__social-icon {
-    width: 16px;
-    height: 16px;
-  } */
   .hero__ticker-text {
     font-size: 11px;
+  }
+
+  .hero__content {
+    gap: 8px;
+    padding-bottom: 25px;
   }
 
   /* About */
@@ -838,8 +858,11 @@
   }
 
   /* Program */
+  .program {
+    padding: 10px;
+  }
   .program__title {
-    font-size: 18px;
+    font-size: 15px;
   }
   .program__card {
     flex: 0 0 144px;
@@ -851,7 +874,7 @@
     font-size: 11px;
   }
   .program__card-date {
-    font-size: 13px;
+    font-size: 10px;
   }
   .program__card-city {
     font-size: 11px;
