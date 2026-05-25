@@ -2522,3 +2522,65 @@ ul {
 .event-hero.section--visible {
   transform: none;
 }
+
+/* ══════════════════════════════════════════════════════
+   КНОПКА КУПИТЬ БИЛЕТ ВНУТРИ КАРТОЧКИ АФИШИ
+   Используем приоритет .program__card чтобы не затронуть single.html
+══════════════════════════════════════════════════════ */
+
+/* Обёртка кнопки — убираем margin-top от глобального стиля */
+.program__card .page-nav__btn-wrapper {
+  position: relative;
+  margin-top: 0;
+  transform: none; /* убираем scale если был */
+  width: 100%;
+}
+
+/* Белый фон кнопки адаптируем под тёмную карточку */
+.program__card .page-nav__btn-bg {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-gold);
+  border-radius: 12px;
+  padding: 4px 4px 4px 12px;
+}
+
+/* Иконка + белая на тёмном фоне */
+.program__card .page-nav__btn-icon {
+  color: var(--color-white);
+}
+
+/* Зелёная кнопка меняем на золотую */
+.program__card .page-nav__buy-btn {
+  background: var(--color-gold);
+  color: var(--color-dark);
+  font-size: 12px;
+  height: 36px;
+  border-radius: 8px;
+  flex: 1;
+  width: 100%;
+}
+
+/* Дропдаун открывается вверх т.к. карточка внизу карусели */
+.program__card .page-nav__dropdown {
+  top: auto;
+  bottom: 100%;
+  border-radius: 16px 16px 0 0;
+  width: 100%;
+  z-index: 50;
+}
+
+/* При открытии — скругление кнопки сверху */
+.program__card .page-nav__btn-wrapper.nav--open .page-nav__btn-bg {
+  border-radius: 0 0 12px 12px;
+}
+
+/* Текст в дропдауне светлее для читаемости */
+.program__card .page-nav__dropdown-item {
+  font-size: 16px;
+}
+
+.program__card .page-nav__dropdown-note,
+.program__card .page-nav__dropdown-sub {
+  color: rgba(0, 0, 0, 0.6);
+}
