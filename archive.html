@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Концертное агентство "Март"</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- jQuery (нужен для виджета билетов и Tilda-совместимых скриптов) -->
+    <script src="js/jquery-1.10.2.min.js" charset="utf-8"></script>
+    <script src="https://radario.ru/frontend/src/api/openapi/openapi.js"></script>
+    <script>
+      radario.Widgets.Afisha({
+        params: { textBtnColor: "#FFFFFF" },
+        standalone: false,
+        createButton: false,
+        key: "0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b",
+      });
+    </script>
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════════════════
+       ШАПКА / НАВИГАЦИЯ
+       Блок: page-header
+  ═══════════════════════════════════════════════════ -->
+
+    <header class="page-header" id="page-header">
+      <nav class="page-nav">
+        <!-- Левая колонка: логотип + соцсети -->
+        <div class="page-nav__left">
+          <a class="page-nav__logo" href="index.html" aria-label="На главную">
+            <img
+              class="page-nav__logo-img"
+              src="img/logo.png"
+              alt="Концертное агентство Март"
+            />
+          </a>
+          <div class="hero__socials">
+            <a class="hero__social-btn" href="#" aria-label="YouTube">
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/Max.svg&quot;)"
+              ></span>
+            </a>
+            <a class="hero__social-btn" href="#" aria-label="TikTok">
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/vk.svg&quot;)"
+              ></span>
+            </a>
+            <a
+              class="hero__social-btn"
+              href="https://l.likee.video/p/dLTc2j"
+              aria-label="Likee"
+            >
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/inst.svg&quot;)"
+              ></span>
+            </a>
+          </div>
+        </div>
+        <!-- /page-nav__left -->
+
+        <!-- Бургер -->
+        <button class="burger" id="burger" aria-label="Меню">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+        <div class="mobile-menu" id="mobile-menu">
+          <button
+            class="mobile-menu__close"
+            id="mobile-menu-close"
+            aria-label="Закрыть"
+          >
+            ×
+          </button>
+          <nav class="mobile-menu__nav">
+            <a class="mobile-menu__link" href="event.html">Мероприятия</a>
+            <a class="mobile-menu__link" href="index.html">Афиша</a>
+            <a class="mobile-menu__link" href="archive.html">Архив</a>
+          </nav>
+        </div>
+      </nav>
+
+      <!-- Мобильное меню -->
+      <div class="mobile-menu__overlay" id="mobile-menu-overlay"></div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+    <section class="archive-hero">
+      <div class="archive-hero__inner">
+        <span class="archive-hero__label">История событий</span>
+        <h1 class="archive-hero__title">Архив <span>мероприятий</span></h1>
+        <p class="archive-hero__desc">
+          Здесь хранится история всех прошедших концертов, спектаклей и шоу
+          концертного агентства «Март». Воспоминания, которые остаются навсегда.
+        </p>
+        <p class="archive-hero__count">
+          Всего в архиве: <span>3</span> мероприятия
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       СЕТКА КАРТОЧЕК АРХИВА
+  ═══════════════════════════════════════════ -->
+    <section class="archive-grid-section">
+      <div class="archive-grid-section__inner">
+        <div class="archive-grid">
+          <!--
+          ════════════════════════════════════════════
+          КАРТОЧКА АРХИВА
+          ════════════════════════════════════════════
+          При натяжке на WordPress каждая карточка
+          генерируется через шаблон WP_Query из записей
+          где ACF поле is_archived = true.
+          Данные подтягиваются из полей записи:
+          - Фото: get_the_post_thumbnail_url()
+          - Название: get_the_title()
+          - Описание: get_the_excerpt()
+          - Город: get_field('city')
+          - Дата: get_field('event_date')
+          - Площадка: get_field('venue')
+          - Ссылка: get_permalink()
+          ════════════════════════════════════════════
+        -->
+
+          <!-- Карточка 1 -->
+          <article class="archive-card">
+            <div
+              class="archive-card__photo"
+              style="background-image: url(&quot;img/program_5.JPG&quot;)"
+            >
+              <div class="archive-card__photo-overlay"></div>
+              <span class="archive-card__badge">Прошедшее</span>
+              <span class="archive-card__date-badge">16–17 МАЯ 2026</span>
+            </div>
+            <div class="archive-card__body">
+              <p class="archive-card__city">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"
+                  />
+                  <circle cx="12" cy="9" r="2.5" />
+                </svg>
+                Луганск
+              </p>
+              <h2 class="archive-card__title">
+                Симфоническое Караоке — Оркестр «Новое время»
+              </h2>
+              <p class="archive-card__desc">
+                По многочисленным просьбам жителей и гостей Луганска оркестр
+                «Новое время» вернулся с новой программой «КАРАОКЕ». Более 2 000
+                свечей, живой оркестр и любимые хиты — незабываемый вечер.
+              </p>
+              <div class="archive-card__meta">
+                <span class="archive-card__venue">Дворец им. В.И. Ленина</span>
+                <a class="archive-card__link" href="single.html?city=lugansk">
+                  Подробнее
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Карточка 2 -->
+          <article class="archive-card">
+            <div
+              class="archive-card__photo"
+              style="background-image: url(&quot;img/program_1.JPG&quot;)"
+            >
+              <div class="archive-card__photo-overlay"></div>
+              <span class="archive-card__badge">Прошедшее</span>
+              <span class="archive-card__date-badge">15 МАР 2026</span>
+            </div>
+            <div class="archive-card__body">
+              <p class="archive-card__city">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"
+                  />
+                  <circle cx="12" cy="9" r="2.5" />
+                </svg>
+                Ростов-на-Дону
+              </p>
+              <h2 class="archive-card__title">Спектакль «Любовь в квадрате»</h2>
+              <p class="archive-card__desc">
+                Трогательный и смешной спектакль о любви во всех её проявлениях.
+                Зрители смеялись и плакали — именно так и должно быть настоящее
+                театральное искусство.
+              </p>
+              <div class="archive-card__meta">
+                <span class="archive-card__venue">Театральная площадь</span>
+                <a class="archive-card__link" href="single.html">
+                  Подробнее
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Карточка 3 -->
+          <article class="archive-card">
+            <div
+              class="archive-card__photo"
+              style="background-image: url(&quot;img/program_2.JPG&quot;)"
+            >
+              <div class="archive-card__photo-overlay"></div>
+              <span class="archive-card__badge">Прошедшее</span>
+              <span class="archive-card__date-badge">20 ФЕВ 2026</span>
+            </div>
+            <div class="archive-card__body">
+              <p class="archive-card__city">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"
+                  />
+                  <circle cx="12" cy="9" r="2.5" />
+                </svg>
+                Донецк
+              </p>
+              <h2 class="archive-card__title">
+                Спектакль «Упражнения в прекрасном»
+              </h2>
+              <p class="archive-card__desc">
+                Лёгкий и остроумный спектакль о красоте в самых неожиданных
+                проявлениях. Два часа смеха и размышлений о том, что значит быть
+                собой.
+              </p>
+              <div class="archive-card__meta">
+                <span class="archive-card__venue">Донецкий театр</span>
+                <a class="archive-card__link" href="single.html">
+                  Подробнее
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Пустое состояние (показывается если нет карточек) -->
+        <div class="archive-empty">
+          <div class="archive-empty__icon">📭</div>
+          <p class="archive-empty__text">В архиве пока нет мероприятий</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       CTA — вернуться к афише
+  ═══════════════════════════════════════════ -->
+    <section class="archive-cta">
+      <div class="archive-cta__inner">
+        <p class="archive-cta__text">
+          Хотите посетить предстоящие мероприятия? Загляните в актуальную афишу
+          — там всегда что-то интересное.
+        </p>
+        <a class="archive-cta__btn" href="index.html">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="19" y1="12" x2="5" y2="12" />
+            <polyline points="12 19 5 12 12 5" />
+          </svg>
+          Перейти к афише
+        </a>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+       ФУТЕР
+       Блок: page-footer
+  ═══════════════════════════════════════════════════ -->
+
+    <footer class="page-footer" id="page-footer">
+      <div class="page-footer__inner">
+        <div class="page-footer__requisites">
+          <p class="page-footer__requisite">ИП Войтович</p>
+          <p class="page-footer__requisite">ИНН 5012116880</p>
+          <p class="page-footer__requisite">ОГРН 1265000008900</p>
+        </div>
+        <div class="page-footer__brand">
+          <div class="hero__socials">
+            <a class="hero__social-btn" href="#" aria-label="YouTube">
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/Max.svg&quot;)"
+              ></span>
+            </a>
+            <a class="hero__social-btn" href="#" aria-label="TikTok">
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/vk.svg&quot;)"
+              ></span>
+            </a>
+            <a
+              class="hero__social-btn"
+              href="https://l.likee.video/p/dLTc2j"
+              aria-label="Likee"
+            >
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/inst.svg&quot;)"
+              ></span>
+            </a>
+          </div>
+          Все права защищены
+        </div>
+      </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════
+       СКРИПТЫ
+  ═══════════════════════════════════════════════════ -->
+
+    <!-- Smooth Scroll -->
+    <script src="js/SmoothScroll.min.js"></script>
+    <script>
+      SmoothScroll({
+        animationTime: 800,
+        stepSize: 75,
+        accelerationDelta: 30,
+        accelerationMax: 2,
+        keyboardSupport: true,
+        arrowScroll: 50,
+        pulseAlgorithm: true,
+        pulseScale: 4,
+        pulseNormalize: 1,
+        touchpadSupport: true,
+      });
+    </script>
+
+    <!-- Основной JS Концертное агентство "Март" -->
+    <script src="js/main.js"></script>
+    <script src="js/burger.js"></script>
+    <script src="js/archive.js"></script>
+  </body>
+</html>
