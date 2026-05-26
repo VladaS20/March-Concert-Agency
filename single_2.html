@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Концертное агентство "Март"</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- jQuery (нужен для виджета билетов и Tilda-совместимых скриптов) -->
+    <script src="js/jquery-1.10.2.min.js" charset="utf-8"></script>
+    <script src="https://radario.ru/frontend/src/api/openapi/openapi.js"></script>
+    <!-- Виджет Radario инициализируется динамически через main.js в зависимости от города -->
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════════════════
+       ШАПКА / НАВИГАЦИЯ
+       Блок: page-header
+  ═══════════════════════════════════════════════════ -->
+
+    <header class="page-header" id="page-header">
+      <nav class="page-nav">
+        <!-- Левая колонка: логотип + соцсети -->
+        <div class="page-nav__left">
+          <a class="page-nav__logo" href="index.html" aria-label="На главную">
+            <img
+              class="page-nav__logo-img"
+              src="img/logo.png"
+              alt="Концертное агентство Март"
+            />
+          </a>
+          <div class="hero__socials">
+            <a class="hero__social-btn" href="#" aria-label="YouTube">
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/Max.svg&quot;)"
+              ></span>
+            </a>
+            <a class="hero__social-btn" href="#" aria-label="TikTok">
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/vk.svg&quot;)"
+              ></span>
+            </a>
+            <a
+              class="hero__social-btn"
+              href="https://l.likee.video/p/dLTc2j"
+              aria-label="Likee"
+            >
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/inst.svg&quot;)"
+              ></span>
+            </a>
+          </div>
+        </div>
+        <!-- /page-nav__left -->
+
+        <!-- Бургер -->
+        <button class="burger" id="burger" aria-label="Меню">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+        <div class="mobile-menu" id="mobile-menu">
+          <button
+            class="mobile-menu__close"
+            id="mobile-menu-close"
+            aria-label="Закрыть"
+          >
+            ×
+          </button>
+          <nav class="mobile-menu__nav">
+            <a class="mobile-menu__link" href="index.html">Главная</a>
+            <a class="mobile-menu__link" href="event.html">Мероприятия</a>
+            <a class="mobile-menu__link" href="archive.html">Архив</a>
+          </nav>
+        </div>
+      </nav>
+
+      <!-- Мобильное меню -->
+      <div class="mobile-menu__overlay" id="mobile-menu-overlay"></div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════
+       HERO — ПЕРВЫЙ ЭКРАН
+  ═══════════════════════════════════════════════ -->
+    <section class="event-hero" id="hero">
+      <div class="event-hero__content">
+        <div class="event-hero__left">
+          <span class="event-hero__label">Спектакль</span>
+          <h1 class="event-hero__title">Упражнения <br />в прекрасном</h1>
+          <p class="event-hero__city-tag" id="hero-city-tag"></p>
+          <div class="event-hero__meta">
+            <div class="event-hero__meta-item">
+              <span class="event-hero__meta-label">Продолжительность</span>
+              <span class="event-hero__meta-value">2 час 30 минут</span>
+            </div>
+            <div class="event-hero__meta-item">
+              <span class="event-hero__meta-label">Город</span>
+              <span class="event-hero__meta-value"></span>
+            </div>
+            <div class="event-hero__meta-item">
+              <span class="event-hero__meta-label">Время</span>
+              <span class="event-hero__meta-value"></span>
+            </div>
+            <div class="event-hero__meta-item">
+              <span class="event-hero__meta-label">Место</span>
+              <span class="event-hero__meta-value"></span>
+            </div>
+          </div>
+          <p class="event-hero__desc">
+            Трогательный и смешной спектакль о любви во всех её проявлениях —
+            первой, последней, невозможной и неизбежной.
+          </p>
+          <div class="page-nav__btn-wrapper">
+            <div class="page-nav__btn-bg" id="nav-btn">
+              <div id="radario-btn-container" style="display: none"></div>
+              <a class="page-nav__buy-btn buy-btn-event" id="buy-btn"
+                >КУПИТЬ БИЛЕТ</a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="event-hero__right"
+          style="
+            background-image: url(&quot;img/uptachneniya_v_prekrasnom.jpg&quot;);
+          "
+        >
+          <span class="event-hero__age">16+</span>
+        </div>
+      </div>
+      <div class="hero__ticker-wrapper">
+        <div class="hero__ticker-track hero__ticker-track--white">
+          <div class="hero__ticker-text" id="ticker1">
+            Упражнения в прекрасном ✦ Живые эмоции ✦ Смех и слёзы ✦ Лето 2026 ✦
+            Сочи ✦ Упражнения в прекрасном ✦ Живые эмоции ✦ Смех и слёзы ✦ Лето
+            2026 ✦ Сочи ✦
+          </div>
+        </div>
+        <div class="hero__ticker-track hero__ticker-track--green">
+          <div
+            class="hero__ticker-text hero__ticker-text--reverse"
+            id="ticker2"
+          >
+            Упражнения в прекрасном ✦ Живые эмоции ✦ Смех и слёзы ✦ Лето 2026 ✦
+            Сочи ✦ Упражнения в прекрасном ✦ Живые эмоции ✦ Смех и слёзы ✦ Лето
+            2026 ✦ Сочи ✦
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Бегущие строки -->
+
+    <!-- ═══════════════════════════════════════════════
+       БЛОК С ГОРОДАМИ И ПЛОЩАДКАМИ
+  ═══════════════════════════════════════════════ -->
+    <section class="city-switcher" id="cities">
+      <div class="city-switcher__inner">
+        <p class="city-switcher__title">Выберите город</p>
+        <div class="city-switcher__tabs">
+          <button
+            class="city-switcher__tab city-switcher__tab--active"
+            data-city="sochi"
+          >
+            Сочи
+          </button>
+        </div>
+        <div class="city-cards">
+          <div
+            class="city-card city-card--active"
+            data-city="sochi"
+            data-event-id="2718837"
+          >
+            <div class="city-card__info">
+              <div class="city-card__field">
+                <span class="city-card__label">Город</span>
+                <span class="city-card__value">Сочи</span>
+              </div>
+              <div class="city-card__field">
+                <span class="city-card__label">Место</span>
+                <span class="city-card__value">Зимний театр</span>
+              </div>
+              <div class="city-card__field">
+                <span class="city-card__label">Время</span>
+                <span class="city-card__value">19:00</span>
+              </div>
+              <div class="city-card__field">
+                <span class="city-card__label">Дата</span>
+                <span class="city-card__date">29 июля 2026 г.</span>
+              </div>
+            </div>
+            <a class="city-card__btn">КУПИТЬ БИЛЕТ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section--hidden section--visible" id="about">
+      <div class="about__inner">
+        <h2 class="about__title">О СПЕКТАКЛЕ</h2>
+
+        <p class="about__description">
+          Она — популярная эстрадная дива. Прилетает в Торонто на гастроли и
+          встречает мужчину… без определённого места жительства. <br />Он — её
+          бывший муж. Отец её взрослой дочери. Отчим её будущего зятя. И…
+          миллионер. <br />
+          <br />
+          Две истории любви. Одна случайная встреча.
+        </p>
+
+        <blockquote class="about__quote">
+          <p class="about__quote-text">
+            И непредсказуемые обстоятельства, <em>которые</em> перевернут всё.
+          </p>
+          <cite class="about__quote-author">/ В любовь в квадрате</cite>
+        </blockquote>
+
+        <div class="about__utp">
+          <h3 class="about__utp-title">Актерский состав</h3>
+          <ul class="about__utp-list">
+            <li class="about__utp-item">
+              🎭 <strong>СЕРГЕЙ ЮШКЕВИЧ</strong> <br />
+              Заслуженный артист РФ, актёр театра «Современник». Яркий, озорной,
+              с невероятным чувством юмора — в этом спектакле вы увидите его
+              совершенно с новой стороны.
+            </li>
+            <li class="about__utp-item">
+              🎭 <strong>ЕЛЕНА БИРЮКОВА</strong><br />
+              Звезда сериала «Саша+Маша», талантливая и обаятельная актриса
+              театра и кино.
+            </li>
+            <li class="about__utp-item">
+              🎭 <strong>ПАВЕЛ КУЗЬМИН</strong> <br />
+              Актёр, чья харизма и энергия заполняют весь зал.
+            </li>
+            <li class="about__utp-item">
+              🎭 <strong>МАРИЯ ФУРСЕНКО</strong> <br />
+              Молодая звезда, которой рукоплещет зритель.
+            </li>
+          </ul>
+        </div>
+
+        <div class="about__people">
+          <div class="about__person">
+            <span class="about__person-role">🎭 Режиссёр</span>
+            <p class="about__person-name">Яков Ломкин</p>
+            <span class="about__person-role">🎼 Композитор</span>
+            <p class="about__person-name">Ричардас Норвила</p>
+            <span class="about__person-role">📖 По пьесе</span>
+            <p class="about__person-name">Ганны Слуцки</p>
+          </div>
+          <div class="about__person">
+            <span class="about__person-role">Жанр</span>
+            <p class="about__person-name">Лирическая комедия</p>
+            <p class="about__person-desc">2 часа 30 минут с антрактом.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+       ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
+       Блок: faq
+  ═══════════════════════════════════════════════════ -->
+
+    <section class="faq" id="faq">
+      <div class="faq__inner">
+        <h2 class="faq__title">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">
+              Где купить официальные билеты?
+            </summary>
+            <div class="faq__answer">
+              <p>
+                Официальные билеты доступны на сайте мероприятия через виджет
+                оператора RADARIO. Подробная информация о платежной системе по
+                <a href="https://business.radario.ru/support" class="faq__link"
+                  >ссылке.</a
+                >
+              </p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">
+              Можно ли вернуть или обменять билет?
+            </summary>
+            <div class="faq__answer">
+              <p>
+                Условия возврата и обмена указаны в договоре оферты.
+                Ознакомьтесь с
+                <a href="https://business.radario.ru/support" class="faq__link"
+                  >правилами</a
+                >
+                на сайте оператора продажи.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+    <!-- ═══════════════════════════════════════════════
+       ФУТЕР
+  ═══════════════════════════════════════════════ -->
+
+    <footer class="page-footer" id="page-footer">
+      <div class="page-footer__inner">
+        <div class="page-footer__requisites">
+          <p class="page-footer__requisite">ИП Войтович</p>
+          <p class="page-footer__requisite">ИНН 5012116880</p>
+          <p class="page-footer__requisite">ОГРН 1265000008900</p>
+        </div>
+        <div class="page-footer__brand">
+          <div class="hero__socials">
+            <a class="hero__social-btn" href="#" aria-label="YouTube">
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/Max.svg&quot;)"
+              ></span>
+            </a>
+            <a class="hero__social-btn" href="#" aria-label="TikTok">
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/vk.svg&quot;)"
+              ></span>
+            </a>
+            <a
+              class="hero__social-btn"
+              href="https://l.likee.video/p/dLTc2j"
+              aria-label="Likee"
+            >
+              <span
+                class="hero__social-icon"
+                style="--icon: url(&quot;../img/inst.svg&quot;)"
+              ></span>
+            </a>
+          </div>
+          Все права защищены
+        </div>
+      </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════
+       СКРИПТЫ
+  ═══════════════════════════════════════════════════ -->
+
+    <!-- Smooth Scroll -->
+    <script src="js/SmoothScroll.min.js"></script>
+    <script>
+      SmoothScroll({
+        animationTime: 800,
+        stepSize: 75,
+        accelerationDelta: 30,
+        accelerationMax: 2,
+        keyboardSupport: true,
+        arrowScroll: 50,
+        pulseAlgorithm: true,
+        pulseScale: 4,
+        pulseNormalize: 1,
+        touchpadSupport: true,
+      });
+    </script>
+
+    <!-- Подстановка города в hero из URL-параметра ?city= -->
+    <script>
+      (function () {
+        var cityNames = {
+          sochi: "Сочи",
+          gelendzhik: "Геленджик",
+          novorossiysk: "Новороссийск",
+          lugansk: "Луганск",
+          donetsk: "Донецк",
+        };
+
+        function updateHeroCityTag(city) {
+          var tag = document.getElementById("hero-city-tag");
+          if (!tag) return;
+          tag.textContent = cityNames[city] || "";
+        }
+
+        /* ── Синхронизация мета-данных hero из city-card ── */
+        window.updateHeroMeta = function (city) {
+          var cityCard = document.querySelector(
+            '.city-card[data-city="' + city + '"]',
+          );
+          if (!cityCard) return;
+
+          var values = cityCard.querySelectorAll(".city-card__value");
+          var dateEl = cityCard.querySelector(".city-card__date");
+
+          var cityName = values[0] ? values[0].textContent.trim() : "";
+          var venue = values[1] ? values[1].textContent.trim() : "";
+          var dayTime = values[2] ? values[2].textContent.trim() : "";
+          var date = dateEl ? dateEl.textContent.trim() : "";
+
+          var metaItems = document.querySelectorAll(".event-hero__meta-item");
+          // metaItems[0] — Продолжительность, не трогаем
+          if (metaItems[1])
+            metaItems[1].querySelector(".event-hero__meta-value").textContent =
+              cityName;
+          if (metaItems[2])
+            metaItems[2].querySelector(".event-hero__meta-value").textContent =
+              date ? date + ", " + dayTime : dayTime;
+          if (metaItems[3])
+            metaItems[3].querySelector(".event-hero__meta-value").textContent =
+              venue;
+
+          updateHeroCityTag(city);
+        };
+
+        // Читаем из URL при загрузке
+        var urlParams = new URLSearchParams(window.location.search);
+        var cityFromUrl = urlParams.get("city");
+        if (cityFromUrl) updateHeroCityTag(cityFromUrl);
+
+        // Следим за кликами по табам города
+        document.addEventListener("DOMContentLoaded", function () {
+          // Инициализация мета при загрузке
+          if (cityFromUrl) {
+            window.updateHeroMeta(cityFromUrl);
+          } else {
+            // дефолтный город — первый доступный
+            var firstTab = document.querySelector(".city-switcher__tab");
+            if (firstTab && firstTab.dataset.city) {
+              window.updateHeroMeta(firstTab.dataset.city);
+            }
+          }
+
+          document
+            .querySelectorAll(".city-switcher__tab")
+            .forEach(function (tab) {
+              tab.addEventListener("click", function () {
+                updateHeroCityTag(tab.dataset.city);
+              });
+            });
+        });
+      })();
+    </script>
+
+    <!-- Основной JS Концертное агентство "Март" -->
+    <script src="js/burger.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/single.js"></script>
+  </body>
+</html>
