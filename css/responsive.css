@@ -630,6 +630,10 @@
   .about__quote-text {
     font-size: 20px;
   }
+
+   .about__person-name {
+      font-size: 18px;
+   }
   /* Program */
   .program {
     padding: 31px 13px;
