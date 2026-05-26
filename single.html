@@ -14,6 +14,14 @@
     <!-- jQuery (нужен для виджета билетов и Tilda-совместимых скриптов) -->
     <script src="js/jquery-1.10.2.min.js" charset="utf-8"></script>
     <script src="https://radario.ru/frontend/src/api/openapi/openapi.js"></script>
+    <!-- <script>
+      radario.Widgets.Event({
+        params: { textBtnColor: "#FFFFFF" },
+        standalone: false,
+        createButton: true,
+        eventId: 2718589,
+      });
+    </script> -->
   </head>
   <body>
     <!-- ═══════════════════════════════════════════════════
@@ -74,8 +82,8 @@
             ×
           </button>
           <nav class="mobile-menu__nav">
+            <a class="mobile-menu__link" href="index.html">Главная</a>
             <a class="mobile-menu__link" href="event.html">Мероприятия</a>
-            <a class="mobile-menu__link" href="index.html">Афиша</a>
             <a class="mobile-menu__link" href="archive.html">Архив</a>
           </nav>
         </div>
@@ -100,14 +108,16 @@
               <span class="event-hero__meta-value">2 час 30 минут</span>
             </div>
             <div class="event-hero__meta-item">
-              <span class="event-hero__meta-label">Города</span>
-              <span class="event-hero__meta-value"
-                >Сочи, Геленджик, Новороссийск</span
-              >
+              <span class="event-hero__meta-label">Город</span>
+              <span class="event-hero__meta-value"></span>
             </div>
             <div class="event-hero__meta-item">
-              <span class="event-hero__meta-label">Лето</span>
-              <span class="event-hero__meta-value">2026</span>
+              <span class="event-hero__meta-label">Время</span>
+              <span class="event-hero__meta-value"></span>
+            </div>
+            <div class="event-hero__meta-item">
+              <span class="event-hero__meta-label">Место</span>
+              <span class="event-hero__meta-value"></span>
             </div>
           </div>
           <p class="event-hero__desc">
@@ -116,34 +126,11 @@
           </p>
           <div class="page-nav__btn-wrapper">
             <div class="page-nav__btn-bg" id="nav-btn">
-              <span class="page-nav__btn-icon">+</span>
-              <a
-                class="page-nav__buy-btn"
-                id="buy-btn"
+              <!-- <div id="radario-btn-container" style="display: none"></div> -->
+              <a class="page-nav__buy-btn buy-btn-event" id="buy-btn"
                 >КУПИТЬ БИЛЕТ</a
               >
             </div>
-            <!-- <div class="page-nav__dropdown">
-              <a
-                class="page-nav__dropdown-item"
-                href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
-                >Сочи</a
-              >
-              <a
-                class="page-nav__dropdown-item"
-                href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
-                >Геленджик</a
-              >
-              <a
-                class="page-nav__dropdown-item"
-                href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
-                >Новороссийск</a
-              >
-              <p class="page-nav__dropdown-note">
-                Успей купить билеты заранее.
-              </p>
-              <p class="page-nav__dropdown-sub">БРОНИРУЙ лучшие места!</p>
-            </div> -->
           </div>
         </div>
         <div
@@ -197,78 +184,80 @@
           </button>
         </div>
         <div class="city-cards">
-          <div class="city-card city-card--active" data-city="sochi">
+          <div
+            class="city-card city-card--active"
+            data-city="sochi"
+            data-event-id="2718589"
+          >
             <div class="city-card__info">
               <div class="city-card__field">
                 <span class="city-card__label">Город</span>
                 <span class="city-card__value">Сочи</span>
               </div>
               <div class="city-card__field">
-                <span class="city-card__label">Площадка</span>
-                <span class="city-card__value">Уточняется</span>
+                <span class="city-card__label">Место</span>
+                <span class="city-card__value">Зимний театр</span>
               </div>
               <div class="city-card__field">
-                <span class="city-card__label">День недели, время</span>
-                <span class="city-card__value">Воскресенье, 19:00</span>
+                <span class="city-card__label">Время</span>
+                <span class="city-card__value">19:00</span>
               </div>
               <div class="city-card__field">
                 <span class="city-card__label">Дата</span>
-                <span class="city-card__date">06.07</span>
+                <span class="city-card__date">06 июля 2026 г.</span>
               </div>
             </div>
             <a class="city-card__btn">КУПИТЬ БИЛЕТ</a>
           </div>
 
-          <div class="city-card" data-city="gelendzhik">
+          <div class="city-card" data-city="gelendzhik" data-event-id="2691902">
             <div class="city-card__info">
               <div class="city-card__field">
                 <span class="city-card__label">Город</span>
                 <span class="city-card__value">Геленджик</span>
               </div>
               <div class="city-card__field">
-                <span class="city-card__label">Площадка</span>
-                <span class="city-card__value">Уточняется</span>
+                <span class="city-card__label">Место</span>
+                <span class="city-card__value">Геленджик Арена</span>
               </div>
               <div class="city-card__field">
-                <span class="city-card__label">День недели, время</span>
-                <span class="city-card__value">Среда, 19:00</span>
+                <span class="city-card__label">Время</span>
+                <span class="city-card__value">20:00</span>
               </div>
               <div class="city-card__field">
                 <span class="city-card__label">Дата</span>
-                <span class="city-card__date">09.07</span>
+                <span class="city-card__date">09 июля 2026 г.</span>
               </div>
             </div>
-            <a
-              class="city-card__btn"
-              href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
-              >КУПИТЬ БИЛЕТ</a
-            >
+            <a class="city-card__btn">КУПИТЬ БИЛЕТ</a>
           </div>
 
-          <div class="city-card" data-city="novorossiysk">
+          <div
+            class="city-card"
+            data-city="novorossiysk"
+            data-event-id="2684417"
+          >
             <div class="city-card__info">
               <div class="city-card__field">
                 <span class="city-card__label">Город</span>
                 <span class="city-card__value">Новороссийск</span>
               </div>
               <div class="city-card__field">
-                <span class="city-card__label">Площадка</span>
-                <span class="city-card__value">Уточняется</span>
+                <span class="city-card__label">Место</span>
+                <span class="city-card__value"
+                  >Новороссийский городской театр
+                </span>
               </div>
               <div class="city-card__field">
-                <span class="city-card__label">День недели, время</span>
-                <span class="city-card__value">Уточняется</span>
+                <span class="city-card__label">Время</span>
+                <span class="city-card__value">20:00</span>
               </div>
               <div class="city-card__field">
                 <span class="city-card__label">Дата</span>
-                <span class="city-card__date">TBD</span>
+                <span class="city-card__date">08 июня 2026 г.</span>
               </div>
             </div>
-            <a
-              class="city-card__btn"
-              href="#afisha/0749190c0da7c0a8adcceffeaf8fcfb56b714478377da2b"
-              >КУПИТЬ БИЛЕТ</a
-            >
+            <a class="city-card__btn">КУПИТЬ БИЛЕТ</a>
           </div>
         </div>
       </div>
@@ -276,7 +265,7 @@
 
     <section class="about section--hidden section--visible" id="about">
       <div class="about__inner">
-        <h2 class="about__title">О МЕРОПРИЯТИИ</h2>
+        <h2 class="about__title">О СПЕКТАКЛЕ</h2>
 
         <p class="about__description">
           Она — популярная эстрадная дива. Прилетает в Торонто на гастроли и
@@ -492,6 +481,36 @@
           tag.textContent = cityNames[city] || "";
         }
 
+        /* ── Синхронизация мета-данных hero из city-card ── */
+        window.updateHeroMeta = function (city) {
+          var cityCard = document.querySelector(
+            '.city-card[data-city="' + city + '"]',
+          );
+          if (!cityCard) return;
+
+          var values = cityCard.querySelectorAll(".city-card__value");
+          var dateEl = cityCard.querySelector(".city-card__date");
+
+          var cityName = values[0] ? values[0].textContent.trim() : "";
+          var venue = values[1] ? values[1].textContent.trim() : "";
+          var dayTime = values[2] ? values[2].textContent.trim() : "";
+          var date = dateEl ? dateEl.textContent.trim() : "";
+
+          var metaItems = document.querySelectorAll(".event-hero__meta-item");
+          // metaItems[0] — Продолжительность, не трогаем
+          if (metaItems[1])
+            metaItems[1].querySelector(".event-hero__meta-value").textContent =
+              cityName;
+          if (metaItems[2])
+            metaItems[2].querySelector(".event-hero__meta-value").textContent =
+              date ? date + ", " + dayTime : dayTime;
+          if (metaItems[3])
+            metaItems[3].querySelector(".event-hero__meta-value").textContent =
+              venue;
+
+          updateHeroCityTag(city);
+        };
+
         // Читаем из URL при загрузке
         var urlParams = new URLSearchParams(window.location.search);
         var cityFromUrl = urlParams.get("city");
@@ -499,6 +518,17 @@
 
         // Следим за кликами по табам города
         document.addEventListener("DOMContentLoaded", function () {
+          // Инициализация мета при загрузке
+          if (cityFromUrl) {
+            window.updateHeroMeta(cityFromUrl);
+          } else {
+            // дефолтный город — первый доступный
+            var firstTab = document.querySelector(".city-switcher__tab");
+            if (firstTab && firstTab.dataset.city) {
+              window.updateHeroMeta(firstTab.dataset.city);
+            }
+          }
+
           document
             .querySelectorAll(".city-switcher__tab")
             .forEach(function (tab) {

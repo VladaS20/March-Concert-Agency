@@ -201,6 +201,49 @@
     var cityTabs = document.querySelectorAll(".city-switcher__tab");
     var cityCards = document.querySelectorAll(".city-card");
 
+    // function updateBuyBtnForCity(city) {
+    //   var cityCard = document.querySelector(
+    //     '.city-card[data-city="' + city + '"]',
+    //   );
+    //   var buyBtn = document.getElementById("buy-btn");
+    //   if (!cityCard || !buyBtn) return;
+
+    //   var eventId = cityCard.dataset.eventId;
+    //   if (!eventId) return;
+
+    //   // помечаем кнопку чтобы updateBuyBtn её не трогал
+    //   buyBtn.dataset.radario = "true";
+    //   buyBtn.removeAttribute("href");
+
+    //   buyBtn.onclick = function (e) {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     radario.Widgets.Event({
+    //       params: { textBtnColor: "#FFFFFF" },
+    //       standalone: false,
+    //       createButton: false,
+    //       eventId: parseInt(eventId),
+    //     });
+    //   };
+    // }
+
+    function updateBuyBtnForCity(city) {
+      var cityCard = document.querySelector(
+        '.city-card[data-city="' + city + '"]',
+      );
+      if (!cityCard) return;
+
+      var eventId = parseInt(cityCard.dataset.eventId);
+      if (!eventId) return;
+
+      var buyBtn = document.getElementById("buy-btn");
+      if (buyBtn) {
+        buyBtn.dataset.radario = "true";
+        buyBtn.dataset.eventId = eventId;
+        buyBtn.removeAttribute("href");
+      }
+    }
+
     function switchCity(city) {
       cityTabs.forEach(function (t) {
         t.classList.toggle(
@@ -214,7 +257,48 @@
       try {
         localStorage.setItem("selected_city", city);
       } catch (e) {}
+
+      if (typeof updateHeroMeta === "function") updateHeroMeta(city);
+      updateBuyBtnForCity(city); // вызываем напрямую
     }
+
+    // document.querySelectorAll(".city-card__btn").forEach(function (btn) {
+    //   btn.addEventListener("click", function (e) {
+    //     e.preventDefault();
+    //     var card = btn.closest(".city-card");
+    //     var eventId = card ? parseInt(card.dataset.eventId) : null;
+    //     if (!eventId) return;
+    //     radario.Widgets.Event({
+    //       params: { textBtnColor: "#FFFFFF" },
+    //       standalone: false,
+    //       createButton: false,
+    //       eventId: eventId,
+    //     });
+    //   });
+    // });
+
+    document.addEventListener("click", function (e) {
+      var btn = e.target.closest(".city-card__btn");
+      if (!btn) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      var card = btn.closest(".city-card");
+      if (!card) return;
+
+      var eventId = parseInt(card.dataset.eventId);
+      if (!eventId) return;
+
+      if (typeof radario === "undefined" || !radario.Widgets) return;
+
+      radario.Widgets.Event({
+        params: { textBtnColor: "#FFFFFF" },
+        standalone: false,
+        createButton: false,
+        eventId: eventId,
+      });
+    });
 
     cityTabs.forEach(function (tab) {
       tab.addEventListener("click", function () {
@@ -401,6 +485,9 @@
     function updateBuyBtn() {
       var buyBtns = document.querySelectorAll(".page-nav__buy-btn");
       buyBtns.forEach(function (btn) {
+        // пропускаем кнопки с Radario onclick — они управляются через updateBuyBtnForCity
+        if (btn.dataset.radario === "true") return;
+
         if (window.innerWidth <= 992) {
           if (btn.getAttribute("href")) {
             btn.dataset.href = btn.getAttribute("href");
@@ -484,5 +571,34 @@
       .forEach(function (w) {
         w.classList.remove("buy--open");
       });
+  });
+
+  // При клике на свою кнопку — кликаем по кнопке Radario
+  // document.getElementById("buy-btn").addEventListener("click", function (e) {
+  //   e.preventDefault();
+  //   var radarioBtn = document.querySelector('[class*="radario"]');
+  //   if (radarioBtn) radarioBtn.click();
+  // });
+
+  /* ── Обработчик кнопки buy-btn через Radario eventId ── */
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest("#buy-btn");
+    if (!btn) return;
+    if (btn.dataset.radario !== "true") return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    var eventId = parseInt(btn.dataset.eventId);
+    if (!eventId) return;
+
+    if (typeof radario === "undefined" || !radario.Widgets) return;
+
+    radario.Widgets.Event({
+      params: { textBtnColor: "#FFFFFF" },
+      standalone: false,
+      createButton: false,
+      eventId: eventId,
+    });
   });
 })();
