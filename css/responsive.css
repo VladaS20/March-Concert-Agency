@@ -190,6 +190,9 @@
   .program__card {
     flex: 0 0 240px;
   }
+  .program__card-photo {
+    height: 210px;
+  }
   .program__card-city {
     font-size: 18px;
   }
@@ -596,6 +599,16 @@
   .hero__ticker-text {
     font-size: 13px;
     padding-right: 30px;
+  }
+
+  .program-swiper__btn {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .swiper-button-next:after,
+  .swiper-rtl .swiper-button-prev:after {
+    font-size: 12px;
   }
 
   /* About */

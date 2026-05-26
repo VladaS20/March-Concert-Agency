@@ -903,6 +903,7 @@ ul {
 }
 .program-swiper__btn--next {
   right: -22px !important;
+  top: 50%;
 }
 
 /* Пагинация */
@@ -980,8 +981,9 @@ ul {
 
 .program__card-photo {
   height: 300px;
-  background-size: cover;
-  background-position: center top;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .program__card-title {
