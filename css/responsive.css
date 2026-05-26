@@ -29,13 +29,13 @@
 
   /* Program */
   .program {
-    padding: 34px 19px;
+    padding: 42px 24px;
   }
   .program__title {
-    font-size: 38px;
+    font-size: 48px;
   }
   .program__card {
-    flex: 0 0 208px;
+    flex: 0 0 260px;
   }
 
   /* Artists */
@@ -182,26 +182,23 @@
 
   /* Program */
   .program {
-    padding: 20px 16px;
-  }
-  .program__grid {
-    justify-content: start;
+    padding: 25px 20px;
   }
   .program__title {
-    font-size: 32px;
+    font-size: 40px;
   }
   .program__card {
-    flex: 0 0 192px;
+    flex: 0 0 240px;
   }
   .program__card-city {
-    font-size: 14px;
-  }
-  .program__card-date {
     font-size: 18px;
   }
+  .program__card-date {
+    font-size: 22px;
+  }
   .program__card-title {
-    font-size: 12px;
-    min-height: 48px;
+    font-size: 15px;
+    min-height: 60px;
   }
 
   /* Artists */
@@ -341,31 +338,31 @@
 
   /* Program */
   .program__title {
-    font-size: 26px;
-    margin-bottom: 19px;
+    font-size: 32px;
+    margin-bottom: 24px;
   }
   .program__card {
-    flex: 0 0 176px;
+    flex: 0 0 220px;
   }
   .program__card-photo {
-    height: 128px;
+    height: 260px;
   }
   .program__card-info {
-    padding: 13px;
-    gap: 6px;
+    padding: 16px;
+    gap: 8px;
   }
   .program__card-city {
-    font-size: 13px;
-  }
-  .program__card-date {
     font-size: 16px;
   }
+  .program__card-date {
+    font-size: 20px;
+  }
   .program__card-title {
-    font-size: 11px;
+    font-size: 14px;
     min-height: auto;
   }
   .program__card-venue {
-    font-size: 10px;
+    font-size: 13px;
   }
 
   /* Artists */
@@ -447,7 +444,7 @@
 
   /* page event */
   .events-hero {
-    padding: 100px 20px 40px;
+    padding: 120px 20px 40px;
   }
   .event-hero__title {
     font-size: 40px;
@@ -500,7 +497,7 @@
 
   /* page archive */
   .archive-hero {
-    padding: 100px 20px 40px;
+    padding: 120px 20px 40px;
   }
   .archive-grid-section {
     padding: 40px 20px 50px;
@@ -624,31 +621,31 @@
   }
   /* Program */
   .program {
-    padding: 25px 10px;
+    padding: 31px 13px;
   }
   .program__title {
-    font-size: 21px;
-    margin-bottom: 16px;
+    font-size: 26px;
+    margin-bottom: 20px;
   }
   .program__card-cities {
     padding: 0;
-    height: 72px;
+    height: 90px;
   }
   .program__card {
-    flex: 0 0 160px;
+    flex: 0 0 200px;
   }
   .program__card-photo {
-    height: 112px;
+    height: 240px;
   }
   .program__card-city {
-    font-size: 12px;
+    font-size: 15px;
   }
   .program__card-date {
-    font-size: 14px;
+    font-size: 18px;
   }
   .program__card-btn {
-    height: 29px;
-    font-size: 9px;
+    height: 36px;
+    font-size: 11px;
   }
 
   /* Artists */
@@ -726,7 +723,7 @@
 
   /* page event */
   .events-hero {
-    padding: 90px 16px 32px;
+    padding: 120px 16px 32px;
   }
   .events-filters {
     padding: 0 16px 20px;
@@ -772,7 +769,7 @@
   }
   /* page archive */
   .archive-hero {
-    padding: 100px 16px 32px;
+    padding: 120px 16px 32px;
   }
   .archive-grid-section {
     padding: 32px 16px 40px;
@@ -848,25 +845,25 @@
 
   /* Program */
   .program {
-    padding: 10px;
+    padding: 13px;
   }
   .program__title {
-    font-size: 15px;
+    font-size: 18px;
   }
   .program__card {
-    flex: 0 0 144px;
+    flex: 0 0 180px;
   }
   .program__card-info {
-    padding: 11px;
+    padding: 14px;
   }
   .program__card-city-link {
-    font-size: 11px;
+    font-size: 14px;
   }
   .program__card-date {
-    font-size: 10px;
+    font-size: 13px;
   }
   .program__card-city {
-    font-size: 11px;
+    font-size: 14px;
   }
   /* corporate */
 

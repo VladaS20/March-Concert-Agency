@@ -20,186 +20,229 @@
   });
   /* ── Horizontal scroll gallery (drag) ── */
 
-  function initDragScroll(el) {
-    if (!el) return;
-    var pos = { left: 0, x: 0 };
-    var isDragging = false;
-    var velocity = 0;
-    var lastX = 0;
-    var rafId = null;
+  // function initDragScroll(el) {
+  //   if (!el) return;
+  //   var pos = { left: 0, x: 0 };
+  //   var isDragging = false;
+  //   var velocity = 0;
+  //   var lastX = 0;
+  //   var rafId = null;
 
-    el.addEventListener("mousedown", function (e) {
-      isDragging = true;
-      pos = { left: el.scrollLeft, x: e.clientX };
-      lastX = e.clientX;
-      velocity = 0;
-      if (rafId) cancelAnimationFrame(rafId);
-      el.style.cursor = "grabbing";
-      el.style.userSelect = "none";
-    });
+  //   el.addEventListener("mousedown", function (e) {
+  //     isDragging = true;
+  //     pos = { left: el.scrollLeft, x: e.clientX };
+  //     lastX = e.clientX;
+  //     velocity = 0;
+  //     if (rafId) cancelAnimationFrame(rafId);
+  //     el.style.cursor = "grabbing";
+  //     el.style.userSelect = "none";
+  //   });
 
-    document.addEventListener("mousemove", function (e) {
-      if (!isDragging) return;
-      velocity = lastX - e.clientX;
-      lastX = e.clientX;
-      el.scrollLeft = pos.left + (pos.x - e.clientX);
-    });
+  //   document.addEventListener("mousemove", function (e) {
+  //     if (!isDragging) return;
+  //     velocity = lastX - e.clientX;
+  //     lastX = e.clientX;
+  //     el.scrollLeft = pos.left + (pos.x - e.clientX);
+  //   });
 
-    document.addEventListener("mouseup", function () {
-      if (!isDragging) return;
-      isDragging = false;
-      el.style.cursor = "grab";
-      el.style.removeProperty("user-select");
-      inertiaScroll();
-    });
+  //   document.addEventListener("mouseup", function () {
+  //     if (!isDragging) return;
+  //     isDragging = false;
+  //     el.style.cursor = "grab";
+  //     el.style.removeProperty("user-select");
+  //     inertiaScroll();
+  //   });
 
-    function inertiaScroll() {
-      if (Math.abs(velocity) < 0.5) return;
-      velocity *= 0.92;
-      el.scrollLeft += velocity;
-      rafId = requestAnimationFrame(inertiaScroll);
-    }
+  //   function inertiaScroll() {
+  //     if (Math.abs(velocity) < 0.5) return;
+  //     velocity *= 0.92;
+  //     el.scrollLeft += velocity;
+  //     rafId = requestAnimationFrame(inertiaScroll);
+  //   }
 
-    el.addEventListener(
-      "touchstart",
-      function (e) {
-        pos = { left: el.scrollLeft, x: e.touches[0].clientX };
-        lastX = e.touches[0].clientX;
-        velocity = 0;
-        if (rafId) cancelAnimationFrame(rafId);
-      },
-      { passive: true },
-    );
+  //   el.addEventListener(
+  //     "touchstart",
+  //     function (e) {
+  //       pos = { left: el.scrollLeft, x: e.touches[0].clientX };
+  //       lastX = e.touches[0].clientX;
+  //       velocity = 0;
+  //       if (rafId) cancelAnimationFrame(rafId);
+  //     },
+  //     { passive: true },
+  //   );
 
-    el.addEventListener(
-      "touchmove",
-      function (e) {
-        velocity = lastX - e.touches[0].clientX;
-        lastX = e.touches[0].clientX;
-        el.scrollLeft = pos.left + (pos.x - e.touches[0].clientX);
-      },
-      { passive: true },
-    );
+  //   el.addEventListener(
+  //     "touchmove",
+  //     function (e) {
+  //       velocity = lastX - e.touches[0].clientX;
+  //       lastX = e.touches[0].clientX;
+  //       el.scrollLeft = pos.left + (pos.x - e.touches[0].clientX);
+  //     },
+  //     { passive: true },
+  //   );
 
-    el.addEventListener(
-      "touchend",
-      function () {
-        inertiaScroll();
-      },
-      { passive: true },
-    );
-  }
+  //   el.addEventListener(
+  //     "touchend",
+  //     function () {
+  //       inertiaScroll();
+  //     },
+  //     { passive: true },
+  //   );
+  // }
 
-  function initCarouselDots(track, dotsContainer) {
-    if (!track || !dotsContainer) return;
-    var cards = track.querySelectorAll(".program__card");
-    if (!cards.length) return;
+  // function initCarouselDots(track, dotsContainer) {
+  //   if (!track || !dotsContainer) return;
+  //   var cards = track.querySelectorAll(".program__card");
+  //   if (!cards.length) return;
 
-    function getVisibleCount() {
-      return Math.round(track.offsetWidth / cards[0].offsetWidth);
-    }
+  //   function getVisibleCount() {
+  //     return Math.round(track.offsetWidth / cards[0].offsetWidth);
+  //   }
 
-    function getStepsCount() {
-      return Math.max(1, cards.length - getVisibleCount() + 1);
-    }
+  //   function getStepsCount() {
+  //     return Math.max(1, cards.length - getVisibleCount() + 1);
+  //   }
 
-    function buildDots() {
-      var steps = getStepsCount();
-      dotsContainer.innerHTML = "";
-      for (var i = 0; i < steps; i++) {
-        (function (index) {
-          var dot = document.createElement("button");
-          dot.className =
-            "carousel__dot" + (index === 0 ? " carousel__dot--active" : "");
-          dot.addEventListener("click", function () {
-            if (!cards[index]) return; // <- вот эта строка добавляется
-            track.scrollTo({
-              left: cards[index].offsetLeft - track.offsetLeft,
-              behavior: "smooth",
-            });
-          });
-          dotsContainer.appendChild(dot);
-        })(i);
-      }
-    }
+  //   function buildDots() {
+  //     var steps = getStepsCount();
+  //     dotsContainer.innerHTML = "";
+  //     for (var i = 0; i < steps; i++) {
+  //       (function (index) {
+  //         var dot = document.createElement("button");
+  //         dot.className =
+  //           "carousel__dot" + (index === 0 ? " carousel__dot--active" : "");
+  //         dot.addEventListener("click", function () {
+  //           if (!cards[index]) return; // <- вот эта строка добавляется
+  //           track.scrollTo({
+  //             left: cards[index].offsetLeft - track.offsetLeft,
+  //             behavior: "smooth",
+  //           });
+  //         });
+  //         dotsContainer.appendChild(dot);
+  //       })(i);
+  //     }
+  //   }
 
-    function updateDots() {
-      var scrollLeft = track.scrollLeft;
-      var steps = getStepsCount();
-      var activeIndex = 0;
-      var minDist = Infinity;
+  //   function updateDots() {
+  //     var scrollLeft = track.scrollLeft;
+  //     var steps = getStepsCount();
+  //     var activeIndex = 0;
+  //     var minDist = Infinity;
 
-      for (var i = 0; i < steps; i++) {
-        if (!cards[i]) continue; // защита от undefined
-        var cardLeft = cards[i].offsetLeft - track.offsetLeft;
-        var dist = Math.abs(scrollLeft - cardLeft);
-        if (dist < minDist) {
-          minDist = dist;
-          activeIndex = i;
-        }
-      }
+  //     for (var i = 0; i < steps; i++) {
+  //       if (!cards[i]) continue; // защита от undefined
+  //       var cardLeft = cards[i].offsetLeft - track.offsetLeft;
+  //       var dist = Math.abs(scrollLeft - cardLeft);
+  //       if (dist < minDist) {
+  //         minDist = dist;
+  //         activeIndex = i;
+  //       }
+  //     }
 
-      dotsContainer
-        .querySelectorAll(".carousel__dot")
-        .forEach(function (dot, i) {
-          dot.classList.toggle("carousel__dot--active", i === activeIndex);
-        });
-    }
+  //     dotsContainer
+  //       .querySelectorAll(".carousel__dot")
+  //       .forEach(function (dot, i) {
+  //         dot.classList.toggle("carousel__dot--active", i === activeIndex);
+  //       });
+  //   }
 
-    buildDots();
-    track.addEventListener("scroll", updateDots);
-    window.addEventListener("resize", function () {
-      buildDots();
-      updateDots();
-    });
-  }
+  //   buildDots();
+  //   track.addEventListener("scroll", updateDots);
+  //   window.addEventListener("resize", function () {
+  //     buildDots();
+  //     updateDots();
+  //   });
+  // }
   document.addEventListener("DOMContentLoaded", function () {
     /* ── Drag scroll for gallery ── */
-    initDragScroll(document.querySelector(".scroll-gallery"));
-    initDragScroll(document.querySelector(".program__grid"));
-    initCarouselDots(
-      document.querySelector(".program__grid"),
-      document.querySelector(".program__dots"),
-    );
-    function updateCardWidth() {
-      var grid = document.querySelector(".program__grid");
-      if (!grid) return;
-      var cards = grid.querySelectorAll(".program__card");
-      if (!cards.length) return;
+    // initDragScroll(document.querySelector(".scroll-gallery"));
+    // initDragScroll(document.querySelector(".program__grid"));
+    // initCarouselDots(
+    //   document.querySelector(".program__grid"),
+    //   document.querySelector(".program__dots"),
+    // );
+    // function updateCardWidth() {
+    //   var grid = document.querySelector(".program__grid");
+    //   if (!grid) return;
+    //   var cards = grid.querySelectorAll(".program__card");
+    //   if (!cards.length) return;
 
-      var width = window.innerWidth;
-      var cardWidth;
+    //   var width = window.innerWidth;
+    //   var cardWidth;
 
-      if (width <= 380) {
-        cardWidth = 260;
-      } else if (width <= 576) {
-        cardWidth = 280;
-      } else if (width <= 768) {
-        cardWidth = 300;
-        // } else if (width <= 992) {
-        //   cardWidth = 360;
-      } else {
-        cardWidth = 340;
-      }
+    //   if (width <= 380) {
+    //     cardWidth = 260;
+    //   } else if (width <= 576) {
+    //     cardWidth = 280;
+    //   } else if (width <= 768) {
+    //     cardWidth = 300;
+    //     } else if (width <= 992) {
+    //       cardWidth = 360;
+    //   } else {
+    //     cardWidth = 340;
+    //   }
 
-      cards.forEach(function (card) {
-        card.style.flex = "0 0 " + cardWidth + "px";
-      });
-    }
+    //   cards.forEach(function (card) {
+    //     card.style.flex = "0 0 " + cardWidth + "px";
+    //   });
+    // }
 
-    updateCardWidth();
-    window.addEventListener("resize", function () {
-      updateCardWidth();
-      // пересчитываем точки пагинации после смены размера
-      initCarouselDots(
-        document.querySelector(".program__grid"),
-        document.querySelector(".program__dots"),
-      );
-    });
+    // updateCardWidth();
+    // window.addEventListener("resize", function () {
+    // updateCardWidth();
+    // пересчитываем точки пагинации после смены размера
+    // initCarouselDots(
+    //   document.querySelector(".program__grid"),
+    //   document.querySelector(".program__dots"),
+    // );
+    // });
 
     /* ── Переключатель городов ── */
     var cityTabs = document.querySelectorAll(".city-switcher__tab");
     var cityCards = document.querySelectorAll(".city-card");
+
+    // function updateBuyBtnForCity(city) {
+    //   var cityCard = document.querySelector(
+    //     '.city-card[data-city="' + city + '"]',
+    //   );
+    //   var buyBtn = document.getElementById("buy-btn");
+    //   if (!cityCard || !buyBtn) return;
+
+    //   var eventId = cityCard.dataset.eventId;
+    //   if (!eventId) return;
+
+    //   // помечаем кнопку чтобы updateBuyBtn её не трогал
+    //   buyBtn.dataset.radario = "true";
+    //   buyBtn.removeAttribute("href");
+
+    //   buyBtn.onclick = function (e) {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     radario.Widgets.Event({
+    //       params: { textBtnColor: "#FFFFFF" },
+    //       standalone: false,
+    //       createButton: false,
+    //       eventId: parseInt(eventId),
+    //     });
+    //   };
+    // }
+
+    function updateBuyBtnForCity(city) {
+      var cityCard = document.querySelector(
+        '.city-card[data-city="' + city + '"]',
+      );
+      if (!cityCard) return;
+
+      var eventId = parseInt(cityCard.dataset.eventId);
+      if (!eventId) return;
+
+      var buyBtn = document.getElementById("buy-btn");
+      if (buyBtn) {
+        buyBtn.dataset.radario = "true";
+        buyBtn.dataset.eventId = eventId;
+        buyBtn.removeAttribute("href");
+      }
+    }
 
     function switchCity(city) {
       cityTabs.forEach(function (t) {
@@ -214,7 +257,48 @@
       try {
         localStorage.setItem("selected_city", city);
       } catch (e) {}
+
+      if (typeof updateHeroMeta === "function") updateHeroMeta(city);
+      updateBuyBtnForCity(city); // вызываем напрямую
     }
+
+    // document.querySelectorAll(".city-card__btn").forEach(function (btn) {
+    //   btn.addEventListener("click", function (e) {
+    //     e.preventDefault();
+    //     var card = btn.closest(".city-card");
+    //     var eventId = card ? parseInt(card.dataset.eventId) : null;
+    //     if (!eventId) return;
+    //     radario.Widgets.Event({
+    //       params: { textBtnColor: "#FFFFFF" },
+    //       standalone: false,
+    //       createButton: false,
+    //       eventId: eventId,
+    //     });
+    //   });
+    // });
+
+    document.addEventListener("click", function (e) {
+      var btn = e.target.closest(".city-card__btn");
+      if (!btn) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      var card = btn.closest(".city-card");
+      if (!card) return;
+
+      var eventId = parseInt(card.dataset.eventId);
+      if (!eventId) return;
+
+      if (typeof radario === "undefined" || !radario.Widgets) return;
+
+      radario.Widgets.Event({
+        params: { textBtnColor: "#FFFFFF" },
+        standalone: false,
+        createButton: false,
+        eventId: eventId,
+      });
+    });
 
     cityTabs.forEach(function (tab) {
       tab.addEventListener("click", function () {
@@ -399,24 +483,23 @@
     var buyBtn = document.getElementById("buy-btn");
 
     function updateBuyBtn() {
-      if (!buyBtn) return;
-      if (window.innerWidth <= 992) {
-        // сохраняем href в data-атрибут чтобы не потерять
-        if (buyBtn.getAttribute("href")) {
-          buyBtn.dataset.href = buyBtn.getAttribute("href");
-          buyBtn.removeAttribute("href");
+      var buyBtns = document.querySelectorAll(".page-nav__buy-btn");
+      buyBtns.forEach(function (btn) {
+        // пропускаем кнопки с Radario onclick — они управляются через updateBuyBtnForCity
+        if (btn.dataset.radario === "true") return;
+
+        if (window.innerWidth <= 992) {
+          if (btn.getAttribute("href")) {
+            btn.dataset.href = btn.getAttribute("href");
+            btn.removeAttribute("href");
+          }
+        } else {
+          if (!btn.getAttribute("href") && btn.dataset.href) {
+            btn.setAttribute("href", btn.dataset.href);
+          }
         }
-      } else {
-        // восстанавливаем href из data-атрибута или оставляем как есть
-        if (!buyBtn.getAttribute("href") && buyBtn.dataset.href) {
-          buyBtn.setAttribute("href", buyBtn.dataset.href);
-        }
-      }
+      });
     }
-
-    updateBuyBtn();
-    window.addEventListener("resize", updateBuyBtn);
-
     updateBuyBtn();
     window.addEventListener("resize", updateBuyBtn);
   });
@@ -488,5 +571,34 @@
       .forEach(function (w) {
         w.classList.remove("buy--open");
       });
+  });
+
+  // При клике на свою кнопку — кликаем по кнопке Radario
+  // document.getElementById("buy-btn").addEventListener("click", function (e) {
+  //   e.preventDefault();
+  //   var radarioBtn = document.querySelector('[class*="radario"]');
+  //   if (radarioBtn) radarioBtn.click();
+  // });
+
+  /* ── Обработчик кнопки buy-btn через Radario eventId ── */
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest("#buy-btn");
+    if (!btn) return;
+    if (btn.dataset.radario !== "true") return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    var eventId = parseInt(btn.dataset.eventId);
+    if (!eventId) return;
+
+    if (typeof radario === "undefined" || !radario.Widgets) return;
+
+    radario.Widgets.Event({
+      params: { textBtnColor: "#FFFFFF" },
+      standalone: false,
+      createButton: false,
+      eventId: eventId,
+    });
   });
 })();

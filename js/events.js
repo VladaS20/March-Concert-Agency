@@ -127,7 +127,10 @@
             var isActive = activeFilters[currentType] === val;
 
             option.style.opacity = isAvailable ? "1" : "0.3";
-            option.style.pointerEvents = isAvailable ? "auto" : "none";
+            option.classList.toggle(
+              "events-filter__option--disabled",
+              !isAvailable,
+            );
 
             if (isActive && !isAvailable) {
               option.classList.remove("events-filter__option--active");
@@ -171,7 +174,7 @@
           .forEach(function (o) {
             o.classList.remove("events-filter__option--active");
             o.style.opacity = "1";
-            o.style.pointerEvents = "auto";
+            // o.style.pointerEvents = "auto";
           });
         document.querySelectorAll(".events-filter").forEach(function (filter) {
           filter.classList.remove("events-filter--active");
