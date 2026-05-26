@@ -900,10 +900,11 @@ ul {
 }
 .program-swiper__btn--prev {
   left: -22px !important;
+   top: 50% !important;
 }
 .program-swiper__btn--next {
   right: -22px !important;
-  top: 50%;
+  top: 50% !important;
 }
 
 /* Пагинация */
