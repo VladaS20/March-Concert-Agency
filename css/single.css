@@ -1,0 +1,507 @@
+/* ═══════════════════════════════════
+   Стили страницы спектакля (single.html)
+═══════════════════════════════════ */
+
+.event-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  background: var(--color-white);
+}
+
+.event-hero .hero__ticker-wrapper {
+  margin-top: 0;
+  position: relative;
+  z-index: 5; /* ниже event-hero__content */
+  overflow: hidden; /* обрезаем только тикер */
+  width: 100%;
+}
+
+/* Фоновое изображение убрано — теперь фото справа через .event-hero__photo */
+.event-hero__bg {
+  display: none;
+}
+
+.event-hero__overlay {
+  display: none;
+}
+
+/* Основная сетка: текст слева, фото справа */
+.event-hero__content {
+  position: relative;
+  z-index: 20; /* выше тикера */
+  width: 100%;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+  padding-top: 120px;
+}
+
+/* Левая часть — текст */
+.event-hero__left {
+  padding: 0px 48px 60px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.event-hero__label {
+  display: inline-block;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--color-accent);
+  border-radius: 20px;
+  padding: 4px 14px;
+  margin-bottom: 16px;
+  background: transparent;
+}
+.event-hero__left .page-nav__btn-wrapper {
+  transform: none; /* убираем scale — он создавал контекст наложения */
+  width: auto;
+  display: inline-block;
+  margin-top: 24px;
+}
+
+.event-hero__left .page-nav__dropdown {
+  z-index: 200;
+  top: 100%;
+  bottom: auto;
+}
+/* Название спектакля — тёмное на белом фоне */
+.event-hero__title {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+/* Динамический город рядом с заголовком */
+.event-hero__city-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+  min-height: 28px;
+  transition: opacity 0.3s ease;
+}
+.event-hero__city-tag:empty {
+  display: none;
+}
+
+.event-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.event-hero__meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.event-hero__meta-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.event-hero__meta-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.event-hero__desc {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+/* Фото спектакля поверх белого фона */
+
+.event-hero__right {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  border-radius: 50px 0 0 50px;
+  max-height: 558px;
+  height: 100%;
+}
+/* 
+.event-hero__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: 50px 0 0 50px;
+} */
+.event-hero__age {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid var(--color-gold);
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--color-gold);
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 2;
+}
+
+.radario-button__main {
+  display: none !important;
+}
+
+.close-popup-radario__buttons-wrapper .radario-button__main {
+  display: inline-block !important;
+}
+/* ══════════════════════════════════════════════════════
+   Форма обратной связи
+══════════════════════════════════════════════════════ */
+.corporate {
+  background: var(--color-blue);
+  padding: 80px 40px;
+  border-bottom: 2px solid #cfa24a36;
+}
+
+.corporate__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+}
+
+.corporate__title {
+  font-family: var(--font-display);
+  font-size: clamp(14px, 4vw, 50px);
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  line-height: 1.1;
+  max-width: 992px;
+  width: 100%;
+}
+
+.corporate__title-accent {
+  color: var(--color-gold);
+}
+
+.corporate__desc {
+  font-family: var(--font-main);
+  font-size: clamp(10px, 1.5vw, 18px);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.corporate__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.corporate__form-fields {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.corporate__input {
+  flex: 1;
+  min-width: 180px;
+  height: 56px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 30px;
+  padding: 0 24px;
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-white);
+  outline: none;
+  transition: border-color var(--transition-base);
+}
+.corporate__input::placeholder {
+  color: #ffffffb3;
+}
+.corporate__input:focus {
+  border-color: var(--color-gold);
+}
+
+.corporate__input:invalid:not(:placeholder-shown) {
+  border-color: rgba(224, 90, 90, 0.6);
+}
+
+.corporate__btn {
+  height: 56px;
+  padding: 0 32px;
+  background: var(--color-gold);
+  color: var(--color-dark);
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition:
+    background var(--transition-base),
+    transform var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+.corporate__btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 75px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: btn-flash 4000ms infinite;
+  pointer-events: none;
+}
+.corporate__btn:hover {
+  background: #e0b85a;
+  transform: scale(1.02);
+}
+
+.corporate__acceptance {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.corporate__checkbox {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--color-gold);
+  cursor: pointer;
+}
+
+.corporate__acceptance-text {
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.corporate__acceptance-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-base);
+}
+.corporate__acceptance-link:hover {
+  color: var(--color-gold);
+}
+
+/* ══════════════════════════════════════════════════════
+   SINGEL PAGE - Страница спектакля
+══════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   CITY BLOCK — блок с городом и площадкой
+══════════════════════════════════════════════════════ */
+.city-switcher {
+  background: var(--color-black);
+  padding: 60px 20px;
+}
+
+.city-switcher__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.city-switcher__title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 24px;
+}
+
+.city-switcher__tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.city-switcher__tab {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+.city-switcher__tab:hover,
+.city-switcher__tab--active {
+  background: var(--color-gold);
+  color: var(--color-dark);
+  border-color: var(--color-gold);
+}
+
+/* Карточки городов */
+.city-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.city-card {
+  display: none;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 28px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  transition: border-color var(--transition-base);
+}
+.city-card:hover {
+  border-color: rgba(207, 162, 74, 0.4);
+}
+.city-card--active {
+  display: flex;
+}
+
+.city-card__info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+.city-card__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.city-card__label {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.city-card__value {
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--color-white);
+}
+
+.city-card__date {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.city-card__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-gold);
+  color: var(--color-dark);
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 0 28px;
+  height: 52px;
+  border-radius: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition:
+    background var(--transition-base),
+    transform var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.city-card__btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 75px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: btn-flash 4000ms infinite;
+  pointer-events: none;
+}
+.city-card__btn:hover {
+  background: #e0b85a;
+  transform: scale(1.02);
+}

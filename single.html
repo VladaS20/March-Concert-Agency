@@ -9,19 +9,13 @@
 
     <!-- Стили -->
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/single.css" />
     <link rel="stylesheet" href="css/responsive.css" />
 
     <!-- jQuery (нужен для виджета билетов и Tilda-совместимых скриптов) -->
     <script src="js/jquery-1.10.2.min.js" charset="utf-8"></script>
     <script src="https://radario.ru/frontend/src/api/openapi/openapi.js"></script>
-    <!-- <script>
-      radario.Widgets.Event({
-        params: { textBtnColor: "#FFFFFF" },
-        standalone: false,
-        createButton: true,
-        eventId: 2718589,
-      });
-    </script> -->
+    <!-- Виджет Radario инициализируется динамически через main.js в зависимости от города -->
   </head>
   <body>
     <!-- ═══════════════════════════════════════════════════
@@ -126,7 +120,7 @@
           </p>
           <div class="page-nav__btn-wrapper">
             <div class="page-nav__btn-bg" id="nav-btn">
-              <!-- <div id="radario-btn-container" style="display: none"></div> -->
+              <div id="radario-btn-container" style="display: none"></div>
               <a class="page-nav__buy-btn buy-btn-event" id="buy-btn"
                 >КУПИТЬ БИЛЕТ</a
               >
@@ -162,6 +156,69 @@
     </section>
 
     <!-- Бегущие строки -->
+    <!-- Блок  О СПЕКТАКЛЕ-->
+    <section class="about section--hidden section--visible" id="about">
+      <div class="about__inner">
+        <h2 class="about__title">О СПЕКТАКЛЕ</h2>
+
+        <p class="about__description">
+          Она — популярная эстрадная дива. Прилетает в Торонто на гастроли и
+          встречает мужчину… без определённого места жительства. <br />Он — её
+          бывший муж. Отец её взрослой дочери. Отчим её будущего зятя. И…
+          миллионер. <br />
+          <br />
+          Две истории любви. Одна случайная встреча.
+        </p>
+
+        <blockquote class="about__quote">
+          <p class="about__quote-text">
+            И непредсказуемые обстоятельства, <em>которые</em> перевернут всё.
+          </p>
+          <cite class="about__quote-author">/ В любовь в квадрате</cite>
+        </blockquote>
+
+        <div class="about__utp">
+          <h3 class="about__utp-title">Актерский состав</h3>
+          <ul class="about__utp-list">
+            <li class="about__utp-item">
+              🎭 <strong>СЕРГЕЙ ЮШКЕВИЧ</strong> <br />
+              Заслуженный артист РФ, актёр театра «Современник». Яркий, озорной,
+              с невероятным чувством юмора — в этом спектакле вы увидите его
+              совершенно с новой стороны.
+            </li>
+            <li class="about__utp-item">
+              🎭 <strong>ЕЛЕНА БИРЮКОВА</strong><br />
+              Звезда сериала «Саша+Маша», талантливая и обаятельная актриса
+              театра и кино.
+            </li>
+            <li class="about__utp-item">
+              🎭 <strong>ПАВЕЛ КУЗЬМИН</strong> <br />
+              Актёр, чья харизма и энергия заполняют весь зал.
+            </li>
+            <li class="about__utp-item">
+              🎭 <strong>МАРИЯ ФУРСЕНКО</strong> <br />
+              Молодая звезда, которой рукоплещет зритель.
+            </li>
+          </ul>
+        </div>
+
+        <div class="about__people">
+          <div class="about__person">
+            <span class="about__person-role">🎭 Режиссёр</span>
+            <p class="about__person-name">Яков Ломкин</p>
+            <span class="about__person-role">🎼 Композитор</span>
+            <p class="about__person-name">Ричардас Норвила</p>
+            <span class="about__person-role">📖 По пьесе</span>
+            <p class="about__person-name">Ганны Слуцки</p>
+          </div>
+          <div class="about__person">
+            <span class="about__person-role">Жанр</span>
+            <p class="about__person-name">Лирическая комедия</p>
+            <p class="about__person-desc">2 часа 30 минут с антрактом.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ═══════════════════════════════════════════════
        БЛОК С ГОРОДАМИ И ПЛОЩАДКАМИ
@@ -263,104 +320,6 @@
       </div>
     </section>
 
-    <section class="about section--hidden section--visible" id="about">
-      <div class="about__inner">
-        <h2 class="about__title">О СПЕКТАКЛЕ</h2>
-
-        <p class="about__description">
-          Она — популярная эстрадная дива. Прилетает в Торонто на гастроли и
-          встречает мужчину… без определённого места жительства. <br />Он — её
-          бывший муж. Отец её взрослой дочери. Отчим её будущего зятя. И…
-          миллионер. <br />
-          Две истории любви. Одна случайная встреча. И непредсказуемые
-          обстоятельства, которые перевернут всё.
-        </p>
-
-        <blockquote class="about__quote">
-          <p class="about__quote-text">
-            Путешествуй сквозь время в ритме <em>души</em>
-          </p>
-          <cite class="about__quote-author"
-            >Оркестр Нового Времени / Orchestra of New Time</cite
-          >
-        </blockquote>
-        <!-- 
-        <div class="about__gallery">
-          <div
-            class="about__gallery-item"
-            style="background-image: url(&quot;img/about_1.JPG&quot;)"
-          ></div>
-          <div
-            class="about__gallery-item"
-            style="background-image: url(&quot;img/about_3.JPG&quot;)"
-          ></div>
-          <div
-            class="about__gallery-item"
-            style="background-image: url(&quot;img/about_2.JPG&quot;)"
-          ></div>
-        </div> -->
-
-        <div class="about__utp">
-          <h3 class="about__utp-title">Актерский состав</h3>
-          <ul class="about__utp-list">
-            <li class="about__utp-item">
-              🎭 <strong>СЕРГЕЙ ЮШКЕВИЧ</strong> <br />
-              Заслуженный артист РФ, актёр театра «Современник». Яркий, озорной,
-              с невероятным чувством юмора — в этом спектакле вы увидите его
-              совершенно с новой стороны.
-            </li>
-            <li class="about__utp-item">
-              🎭 <strong>ЕЛЕНА БИРЮКОВА</strong><br />
-              Звезда сериала «Саша+Маша», талантливая и обаятельная актриса
-              театра и кино.
-            </li>
-            <li class="about__utp-item">
-              🎭 <strong>ПАВЕЛ КУЗЬМИН</strong> <br />
-              Актёр, чья харизма и энергия заполняют весь зал.
-            </li>
-            <li class="about__utp-item">
-              🎭 <strong>МАРИЯ ФУРСЕНКО</strong> <br />
-              Молодая звезда, которой рукоплещет зритель.
-            </li>
-          </ul>
-        </div>
-
-        <!-- <div class="about__facts">
-          <div class="about__fact">
-            <p class="about__fact-text">
-              Формат: живой оркестр, интерактивное пение всем залом, свечная
-              атмосфера, спецэффекты.
-            </p>
-          </div>
-          <div class="about__fact">
-            <p class="about__fact-text">
-              Это не просто концерт — <strong>это встреча</strong> с собой, с
-              музыкой, с настоящими эмоциями ❤️
-            </p>
-          </div>
-        </div> -->
-        <div class="about__people">
-          <div class="about__person">
-            <span class="about__person-role">🎭 Режиссёр</span>
-            <p class="about__person-name">Яков Ломкин</p>
-            <span class="about__person-role">🎼 Композитор</span>
-            <p class="about__person-name">Ричардас Норвила</p>
-            <span class="about__person-role">📖 По пьесе</span>
-            <p class="about__person-name">Ганны Слуцки</p>
-            <!-- <p class="about__person-desc">
-              🎭 Режиссёр — Яков Ломкин 🎼 Композитор — Ричардас Норвила 📖 По
-              пьесе Ганны Слуцки
-            </p> -->
-          </div>
-          <div class="about__person">
-            <span class="about__person-role">Жанр</span>
-            <p class="about__person-name">Лирическая комедия</p>
-            <p class="about__person-desc">2 часа 30 минут с антрактом.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ═══════════════════════════════════════════════════
        ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
        Блок: faq
@@ -402,6 +361,70 @@
         </div>
       </div>
     </section>
+
+    <!-- ═══════════════════════════════════════════════════
+       Форма заявок
+       Блок: corporate
+  ═══════════════════════════════════════════════════ -->
+    <section class="corporate" id="corporate">
+      <div class="corporate__inner">
+        <h2 class="corporate__title">
+          Корпоративным клиентам -
+          <span class="corporate__title-accent">скидка</span>
+        </h2>
+        <p class="corporate__desc">
+          Скидка предоставляется при покупке от 10 билетов. Чтобы получить
+          скидку, оставьте заявку.
+        </p>
+        <form class="corporate__form" id="corporate-form">
+          <div class="corporate__form-fields">
+            <input
+              class="corporate__input"
+              type="text"
+              name="name"
+              placeholder="Имя, фамилия"
+              required
+            />
+            <input
+              class="corporate__input"
+              type="email"
+              name="email"
+              placeholder="Ваш email"
+              required
+            />
+            <input
+              class="corporate__input"
+              type="tel"
+              name="phone"
+              placeholder="Телефон"
+              required
+            />
+            <button class="corporate__btn" type="submit">
+              ОСТАВИТЬ ЗАЯВКУ
+            </button>
+          </div>
+          <label class="corporate__acceptance">
+            <input
+              class="corporate__checkbox"
+              type="checkbox"
+              name="acceptance"
+              required
+            />
+            <span class="corporate__acceptance-text">
+              Нажимая на кнопку, вы даёте согласие на
+              <a class="corporate__acceptance-link" href="#"
+                >обработку персональных данных</a
+              >
+              и соглашаетесь с
+              <a class="corporate__acceptance-link" href="#"
+                >политикой конфиденциальности</a
+              >
+            </span>
+          </label>
+        </form>
+      </div>
+    </section>
+
     <!-- ═══════════════════════════════════════════════
        ФУТЕР
   ═══════════════════════════════════════════════ -->

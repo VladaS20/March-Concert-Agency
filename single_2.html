@@ -9,6 +9,7 @@
 
     <!-- Стили -->
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/single.css" />
     <link rel="stylesheet" href="css/responsive.css" />
 
     <!-- jQuery (нужен для виджета билетов и Tilda-совместимых скриптов) -->
@@ -158,50 +159,7 @@
 
     <!-- Бегущие строки -->
 
-    <!-- ═══════════════════════════════════════════════
-       БЛОК С ГОРОДАМИ И ПЛОЩАДКАМИ
-  ═══════════════════════════════════════════════ -->
-    <section class="city-switcher" id="cities">
-      <div class="city-switcher__inner">
-        <p class="city-switcher__title">Выберите город</p>
-        <div class="city-switcher__tabs">
-          <button
-            class="city-switcher__tab city-switcher__tab--active"
-            data-city="sochi"
-          >
-            Сочи
-          </button>
-        </div>
-        <div class="city-cards">
-          <div
-            class="city-card city-card--active"
-            data-city="sochi"
-            data-event-id="2718837"
-          >
-            <div class="city-card__info">
-              <div class="city-card__field">
-                <span class="city-card__label">Город</span>
-                <span class="city-card__value">Сочи</span>
-              </div>
-              <div class="city-card__field">
-                <span class="city-card__label">Место</span>
-                <span class="city-card__value">Зимний театр</span>
-              </div>
-              <div class="city-card__field">
-                <span class="city-card__label">Время</span>
-                <span class="city-card__value">19:00</span>
-              </div>
-              <div class="city-card__field">
-                <span class="city-card__label">Дата</span>
-                <span class="city-card__date">29 июля 2026 г.</span>
-              </div>
-            </div>
-            <a class="city-card__btn">КУПИТЬ БИЛЕТ</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- Блок О СПЕКТАКЛЕ -->
     <section class="about section--hidden section--visible" id="about">
       <div class="about__inner">
         <h2 class="about__title">О СПЕКТАКЛЕ</h2>
@@ -265,6 +223,50 @@
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════════
+       БЛОК С ГОРОДАМИ И ПЛОЩАДКАМИ
+  ═══════════════════════════════════════════════ -->
+    <section class="city-switcher" id="cities">
+      <div class="city-switcher__inner">
+        <p class="city-switcher__title">Выберите город</p>
+        <div class="city-switcher__tabs">
+          <button
+            class="city-switcher__tab city-switcher__tab--active"
+            data-city="sochi"
+          >
+            Сочи
+          </button>
+        </div>
+        <div class="city-cards">
+          <div
+            class="city-card city-card--active"
+            data-city="sochi"
+            data-event-id="2718837"
+          >
+            <div class="city-card__info">
+              <div class="city-card__field">
+                <span class="city-card__label">Город</span>
+                <span class="city-card__value">Сочи</span>
+              </div>
+              <div class="city-card__field">
+                <span class="city-card__label">Место</span>
+                <span class="city-card__value">Зимний театр</span>
+              </div>
+              <div class="city-card__field">
+                <span class="city-card__label">Время</span>
+                <span class="city-card__value">19:00</span>
+              </div>
+              <div class="city-card__field">
+                <span class="city-card__label">Дата</span>
+                <span class="city-card__date">29 июля 2026 г.</span>
+              </div>
+            </div>
+            <a class="city-card__btn">КУПИТЬ БИЛЕТ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══════════════════════════════════════════════════
        ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
        Блок: faq
@@ -306,6 +308,70 @@
         </div>
       </div>
     </section>
+
+    <!-- ═══════════════════════════════════════════════════
+       Форма заявок
+       Блок: corporate
+  ═══════════════════════════════════════════════════ -->
+    <section class="corporate" id="corporate">
+      <div class="corporate__inner">
+        <h2 class="corporate__title">
+          Корпоративным клиентам -
+          <span class="corporate__title-accent">скидка</span>
+        </h2>
+        <p class="corporate__desc">
+          Скидка предоставляется при покупке от 10 билетов. Чтобы получить
+          скидку, оставьте заявку.
+        </p>
+        <form class="corporate__form" id="corporate-form">
+          <div class="corporate__form-fields">
+            <input
+              class="corporate__input"
+              type="text"
+              name="name"
+              placeholder="Имя, фамилия"
+              required
+            />
+            <input
+              class="corporate__input"
+              type="email"
+              name="email"
+              placeholder="Ваш email"
+              required
+            />
+            <input
+              class="corporate__input"
+              type="tel"
+              name="phone"
+              placeholder="Телефон"
+              required
+            />
+            <button class="corporate__btn" type="submit">
+              ОСТАВИТЬ ЗАЯВКУ
+            </button>
+          </div>
+          <label class="corporate__acceptance">
+            <input
+              class="corporate__checkbox"
+              type="checkbox"
+              name="acceptance"
+              required
+            />
+            <span class="corporate__acceptance-text">
+              Нажимая на кнопку, вы даёте согласие на
+              <a class="corporate__acceptance-link" href="#"
+                >обработку персональных данных</a
+              >
+              и соглашаетесь с
+              <a class="corporate__acceptance-link" href="#"
+                >политикой конфиденциальности</a
+              >
+            </span>
+          </label>
+        </form>
+      </div>
+    </section>
+
     <!-- ═══════════════════════════════════════════════
        ФУТЕР
   ═══════════════════════════════════════════════ -->
