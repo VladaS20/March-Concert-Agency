@@ -670,7 +670,6 @@ ul {
 .about {
   background: var(--color-blue);
   padding: 80px 40px;
-  border-radius: 0 0 40px 40px;
 }
 
 .about__inner {
