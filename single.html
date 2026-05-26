@@ -14,14 +14,7 @@
     <!-- jQuery (нужен для виджета билетов и Tilda-совместимых скриптов) -->
     <script src="js/jquery-1.10.2.min.js" charset="utf-8"></script>
     <script src="https://radario.ru/frontend/src/api/openapi/openapi.js"></script>
-    <!-- <script>
-      radario.Widgets.Event({
-        params: { textBtnColor: "#FFFFFF" },
-        standalone: false,
-        createButton: true,
-        eventId: 2718589,
-      });
-    </script> -->
+    <!-- Виджет Radario инициализируется динамически через main.js в зависимости от города -->
   </head>
   <body>
     <!-- ═══════════════════════════════════════════════════
@@ -126,7 +119,7 @@
           </p>
           <div class="page-nav__btn-wrapper">
             <div class="page-nav__btn-bg" id="nav-btn">
-              <!-- <div id="radario-btn-container" style="display: none"></div> -->
+              <div id="radario-btn-container" style="display: none"></div>
               <a class="page-nav__buy-btn buy-btn-event" id="buy-btn"
                 >КУПИТЬ БИЛЕТ</a
               >
@@ -284,21 +277,6 @@
             >Оркестр Нового Времени / Orchestra of New Time</cite
           >
         </blockquote>
-        <!-- 
-        <div class="about__gallery">
-          <div
-            class="about__gallery-item"
-            style="background-image: url(&quot;img/about_1.JPG&quot;)"
-          ></div>
-          <div
-            class="about__gallery-item"
-            style="background-image: url(&quot;img/about_3.JPG&quot;)"
-          ></div>
-          <div
-            class="about__gallery-item"
-            style="background-image: url(&quot;img/about_2.JPG&quot;)"
-          ></div>
-        </div> -->
 
         <div class="about__utp">
           <h3 class="about__utp-title">Актерский состав</h3>
@@ -325,20 +303,6 @@
           </ul>
         </div>
 
-        <!-- <div class="about__facts">
-          <div class="about__fact">
-            <p class="about__fact-text">
-              Формат: живой оркестр, интерактивное пение всем залом, свечная
-              атмосфера, спецэффекты.
-            </p>
-          </div>
-          <div class="about__fact">
-            <p class="about__fact-text">
-              Это не просто концерт — <strong>это встреча</strong> с собой, с
-              музыкой, с настоящими эмоциями ❤️
-            </p>
-          </div>
-        </div> -->
         <div class="about__people">
           <div class="about__person">
             <span class="about__person-role">🎭 Режиссёр</span>
@@ -347,10 +311,6 @@
             <p class="about__person-name">Ричардас Норвила</p>
             <span class="about__person-role">📖 По пьесе</span>
             <p class="about__person-name">Ганны Слуцки</p>
-            <!-- <p class="about__person-desc">
-              🎭 Режиссёр — Яков Ломкин 🎼 Композитор — Ричардас Норвила 📖 По
-              пьесе Ганны Слуцки
-            </p> -->
           </div>
           <div class="about__person">
             <span class="about__person-role">Жанр</span>
